@@ -1,0 +1,141 @@
+/////////////////
+// COLOR HEXES
+////////////////
+
+$white          : #FFFFFF;
+$black          : #000000;
+
+$grey           : #fefefe;
+
+$pink           : #FF9196;
+$light-blue     : #99D9F8;
+$light-green    : #4FD6C6;
+$red            : #EE5368;
+$purple         : #B9B7F9;
+$deep-green     : #03AE8C;
+
+
+/////////////
+// DEVICES
+////////////
+
+$mobile-width : 768px;
+$tablet-width : 1024px;
+
+@mixin mobile {
+  @media screen and (max-width: $mobile-width - 1) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (min-width: $mobile-width) and (max-width: $tablet-width) {
+    @content;
+  }
+}
+
+@mixin tablet-and-mobile {
+  @media screen and (max-width: $tablet-width) {
+    @content;
+  }
+}
+
+@mixin sm-desktop {
+  @media screen and (min-width: $tablet-width) and (max-width: $screen-md) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (min-width: $tablet-width + 1) {
+    @content;
+  }
+}
+
+@mixin high-dpi {
+  @media
+  (-webkit-min-device-pixel-ratio: 1.5),
+  (min-resolution: 144dpi) {
+    @content;
+  }
+}
+
+////////////
+// WIDTHS
+///////////
+
+$screen-sm : 768px;
+$screen-md : 1200px;
+$screen-lg : 1440px;
+$gutter    : 0px;
+
+// < 768px
+@mixin xs {
+  @media screen and (max-width: $screen-sm - 1) {
+    @content;
+  }
+}
+
+// < 991px;
+@mixin xs-sm {
+  @media screen and (max-width: $screen-md - 1) {
+    @content;
+  }
+}
+
+// < 1199px;
+@mixin xs-md {
+  @media screen and (max-width: $screen-lg - 1) {
+    @content;
+  }
+}
+
+// 768px - 991px
+@mixin sm {
+  @media screen and (min-width: $screen-sm) and (max-width: $screen-md - 1) {
+    @content;
+  }
+}
+
+// 768px - 1199px;
+@mixin sm-md {
+  @media screen and (min-width: $screen-sm) and (max-width: $screen-lg - 1) {
+    @content;
+  }
+}
+
+// >= 768px
+@mixin sm-lg {
+  @media screen and (min-width: $screen-sm) {
+    @content;
+  }
+}
+
+// 1200px - 1439px
+@mixin md {
+  @media screen and (min-width: $screen-md) and (max-width: $screen-lg - 1) {
+    @content;
+  }
+}
+
+// >= 992px
+@mixin md-lg {
+  @media screen and (min-width: $screen-md) {
+    @content;
+  }
+}
+
+// >= 1200px
+@mixin lg {
+  @media screen and (min-width: $screen-lg) {
+    @content;
+  }
+}
+
+@mixin high-dpi {
+  @media
+  (-webkit-min-device-pixel-ratio: 1.5),
+  (min-resolution: 144dpi) {
+    @content;
+  }
+}

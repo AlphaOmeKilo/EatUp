@@ -1,0 +1,19 @@
+.site-footer {
+  padding: 0 34px;
+  height: 52px;
+  
+  .menu {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    
+    &-link {
+      color: $grey;
+      transition: color .25s;
+      
+      &:hover {
+        color: $deep-green;
+      }
+    }
+  }
+}

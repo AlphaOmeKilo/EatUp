@@ -1,0 +1,56 @@
+.site-header {
+  background-color: transparent;
+  
+  .logo,
+  .donate,
+  .menu {
+    position: fixed;
+    z-index: 1000;
+  }
+
+  .logo {
+    top: 0;
+    left: 0;
+    width: 130px;
+    
+    @include desktop {
+      width: 164px;
+    }
+  }
+  
+  .donate {
+    top: 4px;
+    right: 8px;
+    width: 111px;
+    
+    @include desktop {
+      top: 8px;
+      right: 6px;
+      width: 152px;
+    }
+  }
+  
+  .menu {
+    display: flex;
+    justify-content: center;
+    padding: 12px 14.1666% 0;
+    width: 100%;
+    
+    &-link {
+      margin: 0 auto;
+      color: $grey;
+      transition: color .25s;
+      
+      @include sm-desktop {
+        li {
+          font-size: 20px;
+          line-height: 1.2;
+        }
+      }
+      
+      &:hover {
+        color: $pink;
+      }
+    }
+  }
+}

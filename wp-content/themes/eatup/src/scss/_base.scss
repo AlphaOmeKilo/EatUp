@@ -1,0 +1,45 @@
+////////////
+
+html {
+  font-size: 16px;
+}
+
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  
+}
+
+strong,
+.strong {
+  font-weight: bold;
+}
+
+em,
+.em {
+  font-style: italic;
+}
+
+button {
+  outline: none;
+}
+
+textarea:focus,
+input:focus{
+  outline: none;
+}
+
+////////////
+// helpers
+///////////
+
+.hide-overflow {
+  overflow: hidden !important;
+}
+
+.gpu {
+  transform: translate3d(0,0,0);
+  backface-visibility: hidden;
+  perspective: 1000;
+}

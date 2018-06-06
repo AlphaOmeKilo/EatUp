@@ -1,0 +1,243 @@
+//////////////
+//  COLORS  
+/////////////
+
+.bg {
+  &-pink {
+    background-color: $pink;
+  }
+  
+  &-light-blue {
+    background-color: $light-blue;
+  }
+  
+  &-light-green {
+    background-color: $light-green;
+  }
+  
+  &-red {
+    background-color: $red;
+  }
+  
+  &-purple {
+    background-color: $purple;
+  }
+  
+  &-deep-green {
+    background-color: $deep-green;
+  }
+  
+  &-white {
+    background-color: $white;
+  }
+  
+  &-black {
+    background-color: $black;
+  }
+}
+
+.pink {
+  color: $pink;
+}
+
+.light-blue {
+  color: $light-blue;
+}
+
+.light-green {
+  color: $light-green;
+}
+
+.red {
+  color: $red;
+}
+
+.purple {
+  color: $purple;
+}
+
+.deep-green {
+  color: $deep-green;
+}
+
+.grey {
+  color: $grey;
+}
+
+.white {
+  color: $white;
+}
+
+.black {
+  color: $black;
+}
+
+
+////////////////
+//  ALIGNMENT  
+///////////////
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+//////////////
+//  BUTTONS  
+/////////////
+
+.btn {
+  padding: 8px 32px;
+  color: $white;
+  font-family: $value-sans;
+  font-size: 18px;
+  font-weight: normal;
+  line-height: 1.33;
+  transition: all .2s ease-in;
+  box-sizing: border-box;
+  width: max-content;
+  cursor: pointer;
+  
+  @include mobile {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+  
+  &.active {
+    border: none !important;
+  }
+  
+  &-red {
+    background-color: $red;
+    border: 1px solid $red;
+    
+    &:hover {
+      color: $red;
+      background-color: $white;
+    }
+  }
+  
+  &-pink {
+    background-color: $pink;
+    border: 1px solid $pink;
+    
+    &:hover {
+      color: $pink;
+      background-color: $white;
+    }
+  }
+  
+  &-purple {
+    background-color: $purple;
+    border: 1px solid $purple;
+    
+    &:hover {
+      color: $purple;
+      background-color: $white;
+    }
+  }
+  
+  &-light-blue {
+    background-color: $light-blue;
+    border: 1px solid $light-blue;
+    
+    &:hover {
+      color: $light-blue;
+      background-color: $white;
+    }
+  }
+  
+  &-deep-green {
+    background-color: $deep-green;
+    border: 1px solid $deep-green;
+    
+    &:hover {
+      color: $deep-green;
+      background-color: $white;
+    }
+  }
+  
+  &-light-green {
+    background-color: $light-green;
+    border: 1px solid $light-green;
+    
+    &:hover {
+      color: $light-green;
+      background-color: $white;
+    }
+  }
+  
+  &-white {
+    background-color: $white;
+    border: 1px solid $white;
+    
+    &:hover {
+      color: $white;
+      background-color: $white;
+    }
+  }
+  
+  &-black {
+    background-color: $black;
+    border: 1px solid $black;
+    
+    &:hover {
+      color: $black;
+      background-color: $white;
+    }
+  }
+}
+
+
+////////////////////////
+//  PAGE RESTRICTIONS  
+///////////////////////
+
+@include desktop {
+  .desktop-only {
+    display: block;
+  }
+  
+  .tablet-only {
+    display: none !important;
+  }
+  
+  .mobile-only {
+    display: none !important;
+  }
+}
+
+@include tablet {
+  .desktop-only {
+    display: none !important;
+  }
+  
+  .tablet-only {
+    display: block;
+  }
+  
+  .mobile-only {
+    display: none !important;
+  }
+}
+
+@include mobile {
+  .desktop-only {
+    display: none !important;
+  }
+  
+  .tablet-only {
+    display: none !important;
+  }
+  
+  .mobile-only {
+    display: block;
+  }
+}
+
+
+
+

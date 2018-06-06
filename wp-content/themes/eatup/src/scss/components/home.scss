@@ -1,0 +1,146 @@
+.home {
+  
+  &-intro {
+    width: 100%;
+    
+    &-content {
+      padding-top: 224px;
+      
+      .copy-container {
+        padding-left: 42px;
+        
+        .heading,
+        .sub-heading {
+          margin-bottom: 32px;
+        }
+        
+        .sub-heading {
+          width: 546px;
+        }
+        
+        .btn {
+          margin-bottom: 120px;
+        }
+      }
+      
+      .image-container {
+        position: relative;
+        
+        .tile-image {
+        
+          &-carrots {
+            position: absolute;
+            height: 576px;
+            top: -103px;
+          }
+        }
+      }
+      
+      .cloud {
+        position: absolute;
+        width: 204px;
+        bottom: 42px;
+        right: 48px;
+      }
+    }
+  }
+  
+  &-whats-this-about {
+    width: 100%;
+    
+    &-content {
+      padding-top: 160px;
+      padding-bottom: 188px;
+      
+      .copy-container {
+        padding-right: 42px;
+        padding-left: 24px;
+        
+        .heading {
+          margin: 32px 0 14px;
+        }
+      }
+      
+      .image-container {
+        position: relative;
+        
+        .tile-image {
+        
+          &-sandwich {
+            position: absolute;
+            top: -69px;
+          }
+        }
+      }
+    }
+  }
+  
+  &-what-do-you-do {
+    widows: 100%;
+    
+    &-content {
+      padding: 128px 0 144px;
+      
+      .copy-container {
+        padding-left: 42px;
+        
+        .heading {
+          margin: 32px 0 40px;
+        }
+      }
+      
+      .image-container {
+        position: relative;
+        margin: -98px;
+        height: 576px;
+        
+        .interactive-photo {
+          position: absolute;
+          top: calc(50% - 218px);
+          left: calc(50% - 184px);
+          height: 306px;
+          width: 306px;
+          background-size: cover;
+          background-position: center;
+          border: 31px solid $white;
+          border-bottom: 76px solid $white;
+          box-shadow: 0 2px 4px 0 rgba(192, 192, 192, 0.5);
+          box-sizing: content-box;
+          transition: all 1s;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  
+  &-what-can-i-do {
+    width: 100%;
+    
+    &-content {
+      padding-top: 160px;
+      padding-bottom: 188px;
+      
+      .copy-container {
+        padding-right: 36px;
+        padding-left: 24px;
+        
+        .heading {
+          margin: 32px 0 14px;
+        }
+      }
+      
+      .image-container {
+        position: relative;
+        
+        .tile-image {
+        
+          &-map {
+            padding: 0 36px;
+            width: 100%;
+            max-width: 593px;
+          }
+        }
+      }
+    }
+  }
+}
