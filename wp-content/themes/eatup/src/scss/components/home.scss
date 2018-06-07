@@ -57,7 +57,7 @@
         padding-left: 24px;
         
         .heading {
-          margin: 32px 0 14px;
+          margin: 32px 0;
         }
       }
       
@@ -118,14 +118,31 @@
     
     &-content {
       padding-top: 160px;
-      padding-bottom: 188px;
+      padding-bottom: 96px;
       
       .copy-container {
         padding-right: 36px;
         padding-left: 24px;
         
-        .heading {
-          margin: 32px 0 14px;
+        .title,
+        .heading,
+        .copy,
+        .friends-title {
+          margin-bottom: 32px;
+        }
+        
+        .friends-logo-container {
+          width: 446px;
+          
+          .logo {
+            width: 90px;
+            margin-right: 24px;
+          }
+          
+          .logo:nth-of-type(4),
+          .logo:nth-of-type(8) {
+            margin-right: 0;
+          }
         }
       }
       

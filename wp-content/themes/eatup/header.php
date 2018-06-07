@@ -42,13 +42,13 @@
       <a href="<?php eu_url('/donate-form'); ?>"><img src="<?php eu_include('img/header/donate-cloud.png'); ?>" class="donate"></a>
       
       <ul class="menu">
-        <a href="" class="menu-link"><li class="b1">Home</li></a>
+        <a href="<?php eu_url(); ?>" class="menu-link"><li class="b1">Home</li></a>
         <a href="" class="menu-link"><li class="b1">Donate</li></a>
-        <a href="" class="menu-link"><li class="b1">Give us a hand</li></a>
+        <a href="<?php eu_url('/give-us-a-hand'); ?>" class="menu-link"><li class="b1">Give us a hand</li></a>
         <a href="" class="menu-link"><li class="b1">Hey, thanks!</li></a>
         <a href="" class="menu-link"><li class="b1">Media</li></a>
-        <a href="" class="menu-link"><li class="b1">School signup</li></a>
-        <a href="" class="menu-link"><li class="b1">Let's talk</li></a>
+        <a href="<?php eu_url('/signup-a-school'); ?>" class="menu-link"><li class="b1">School signup</li></a>
+        <a href="<?php eu_url('/lets-talk'); ?>" class="menu-link"><li class="b1">Let's talk</li></a>
       </ul>
       
     </header>

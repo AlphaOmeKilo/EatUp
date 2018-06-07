@@ -52,6 +52,7 @@ var eu = eu || {};
   eu.init = function() {
     eu.header.init();
     eu.home.init();
+    eu.form.init();
   }
 
   jQuery(function($) {

@@ -1,0 +1,107 @@
+.contact-form {
+  
+  .contact-form-field {
+    background-color: transparent;
+    border: none;
+    margin-bottom: 64px;
+    
+    &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+      color: $white;
+    }
+    &::-moz-placeholder { /* Firefox 19+ */
+      color: $white;
+    }
+    &:-ms-input-placeholder { /* IE 10+ */
+      color: $white;
+    }
+    &:-moz-placeholder { /* Firefox 18- */
+      color: $white;
+    }
+    
+    &:-webkit-autofill {
+      color: $white;
+    }
+  }
+  
+  .section-label {
+    margin-bottom: 48px;
+  }
+  
+  .radio-group {
+    
+    &-choices {
+      margin-bottom: 52px;
+    }
+  }
+  
+  .radio-container {
+    display: flex;
+    align-items: center;
+    overflow-x: visible;
+    float: left;
+    
+    .radio {
+      height: 0;
+      width: 0;
+      opacity: 0;
+      &:checked + .radio-text {
+        &::before {
+          border: 5px solid $red;
+          background: $white;
+        }
+      }
+      
+      &-text {
+        margin-right: 44px;
+        width: 232px;
+        
+        &::before {
+          display: inline-block;
+          content: "";
+          height: 20px;
+          width: 20px;
+          margin-right: 8px;
+          border: 10px solid $red;
+          border-radius: 50%;
+          transition: all 0.25s linear;
+        }
+      }
+    }
+
+  }
+  
+  .message-label {
+    display: inline-block;
+  }
+  
+  #contact-message {
+    background-color: transparent;
+    border: 1px solid $white;
+    width: 100%;
+    max-width: 594px;
+    height: 126px;
+    margin-bottom: 32px;
+  }
+  
+  .form-footer {
+    display: flex;
+    align-items: center;
+    height: 40px;
+    
+    .btn {
+      position: absolute;
+      right: 0;
+      
+      .signup-a-school & {
+        width: 124px;
+        right: calc(50% - 62px);
+      }
+    }
+  }
+}
+
+.form-response-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

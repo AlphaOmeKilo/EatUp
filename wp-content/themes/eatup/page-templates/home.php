@@ -66,6 +66,14 @@ get_header() ?>
         <b1 class="b1 grey title"><?php echo the_field('t4_title'); ?></b1>
         <h2 class="h2 grey heading"><?php echo the_field('t4_heading'); ?></h2>
         <b2 class="b2 grey copy"><?php echo the_field('t4_copy'); ?></b2>
+        
+        <b2 class="b2 strong grey friends-title"><?php echo the_field('t4_friends_title'); ?></b2>
+        <div class="friends-logo-container">
+          <?php $logos = get_field('t4_friends'); ?>
+          <?php foreach($logos as $logo): ?>
+            <img class="logo" src="<?php echo $logo['url']; ?>" alt="company-logo">
+          <?php endforeach;?>
+        </div>
       </div>
     </div>
   </div>

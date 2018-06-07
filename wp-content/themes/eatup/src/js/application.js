@@ -8,3 +8,4 @@
 
 //=require components/header.js
 //=require components/home.js
+//=require components/form.js

@@ -6,7 +6,12 @@
 @import '_base';
 @import '_common';
 
+@import 'partials/form';
+
 @import 'components/header';
 @import 'components/footer';
 
 @import 'components/home';
+@import 'components/lets-talk';
+@import 'components/give-us-a-hand-form';
+@import 'components/signup-a-school';

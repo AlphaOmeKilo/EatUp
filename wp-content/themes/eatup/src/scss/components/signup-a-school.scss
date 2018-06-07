@@ -1,0 +1,38 @@
+.signup-a-school {
+  position: relative;
+  
+  &-content {
+    display: flex;
+//    height: calc(100vh - 52px);
+    min-height: 876px;
+    padding: 224px 11.25% 0;
+    
+    .contact-icon {
+      float: left;
+      margin-right: 12px;
+      margin-top: 4px;
+    }
+    
+    .title,
+    .phone {
+      margin-bottom: 16px;
+    }
+    
+    .copy {
+      margin-bottom: 24px;
+    }
+  
+    .copy {
+      width: 318px;
+    }
+    
+    .title {
+      width: 432px;
+    }
+    
+    
+    .form-container {
+      padding: 32px 0 56px 66px;
+    }
+  }
+}
