@@ -1,0 +1,108 @@
+.media {
+  &-intro {
+    height: calc(100vh - 52px);
+    min-height: 760px;
+    position: relative;
+    
+    &-content {
+      display: flex;
+      align-items: center;
+      height: 100%;
+      padding: 224px 11.25% 192px;
+      
+      .featured-image {
+        width: 100%;
+      }
+      
+      &-text {
+        padding-right: 24px;
+        
+        .headline {
+          margin-bottom: 16px;
+        }
+
+        .blurb {
+          margin-bottom: 32px;
+        }
+        
+        .btn {
+          margin-bottom: 88px;
+          display: block;
+        }
+      }
+    }
+    
+    .food {
+      position: absolute;
+      &-banana {
+        bottom: -80px;
+        right: 48px;
+        width: 363px;
+      }
+      
+      &-sandwich {
+        left: -124px;
+        height: 389px;
+        bottom: -80px;
+      }
+    }
+  }
+  
+  &-articles {
+    
+    &-content {
+      padding-top: 64px;
+      padding: 64px 11.25%;
+      
+      .heading {
+        margin-bottom: 24px;
+      }
+      
+      .filter {
+        display: flex;
+        margin-bottom: 32px;
+        
+        &-item {
+          opacity: 0.15;
+          margin-right: 16px;
+          cursor: pointer;
+          
+          &.active {
+            opacity: 1;
+          }
+        }
+      }
+      
+      .post-container {
+        
+        .post:nth-child(odd) {
+          padding-right: 12px;
+        }
+        .post:nth-child(even) {
+          padding-left: 12px;
+        }
+        
+        .post {
+          position: relative;
+          margin-bottom: 24px;
+          
+          &-image {
+            width: 100%;
+          }
+          
+          &-title {
+            position: absolute;
+            padding-left: 16px;
+            bottom: 38px;
+          }
+          
+          &-date {
+            position: absolute;
+            padding-left: 16px;
+            bottom: 16px;
+          }
+        }
+      }
+    }
+  }
+}

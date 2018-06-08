@@ -53,6 +53,7 @@ var eu = eu || {};
     eu.header.init();
     eu.home.init();
     eu.form.init();
+    eu.media.init();
   }
 
   jQuery(function($) {
