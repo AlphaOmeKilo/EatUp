@@ -10,3 +10,4 @@
 //=require components/home.js
 //=require components/form.js
 //=require components/media.js
+//=require components/hey-thanks.js

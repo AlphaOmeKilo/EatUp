@@ -54,6 +54,7 @@ var eu = eu || {};
     eu.home.init();
     eu.form.init();
     eu.media.init();
+    eu.thanks.init();
   }
 
   jQuery(function($) {

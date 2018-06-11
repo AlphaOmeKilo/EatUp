@@ -1,0 +1,138 @@
+.hey-thanks {
+  
+  &-intro {
+    width: 100%;
+    
+    &-content {
+      padding: 96px 48px 64px;
+      
+      .title,
+      .copy {
+//        width: 546px;
+        padding-left: 114px;
+      }
+      
+      .title {
+        margin-bottom: 24px;
+        padding-top: 124px;
+      }
+      
+      .copy {
+        font-family: $value-sans;
+        font-size: 32px;
+        font-weight: normal;
+        line-height: 1.13;
+      }
+      
+      .image {
+        width: 100%;
+        
+        &-container {
+          padding: 114px 87px 49px 88px;
+        }
+      }
+    }
+  }
+  
+  &-help {
+    width: 100%;
+    
+    &-content {
+      padding: 192px 162px 240px;
+      
+      .sponsors {
+        padding-left: 195px;
+        padding-right: 57px;
+      }
+      
+      .food-sponsor,
+      .logistics-sponsor {
+        padding-top: 12px;
+
+        &-container {
+          display: flex;
+          justify-content: center;
+          height: 64px;
+          margin-bottom: 32px;
+        }
+      }
+
+      .food-sponsor:not(:last-of-type),
+      .logistics-sponsor:not(:last-of-type) {
+        margin-right: 24px;
+      }
+    }
+    
+    .btn {
+      margin: 0 auto;
+      
+      &-container {
+        padding-bottom: 88px;
+      }
+    }
+  }
+  
+  &-sangas {
+    width: 100%;
+    
+    &-content {
+      padding: 192px 162px 146px;
+      
+      .title {
+        width: 774px;
+      }
+      
+      .subtitle {
+        width: 432px;
+        margin-bottom: 96px;
+      }
+      
+      .sanga-container {
+        position: relative;
+        margin-bottom: 98px;
+        
+        img {
+          width: 100%;
+          margin-top: -4px;
+        }
+        
+        h2 {
+          width: 432px;
+          position: absolute;
+          left: calc(50% - 216px);
+          display: none;
+          
+          &.active {
+            display: block;
+          }
+        }
+        
+        h2:nth-of-type(1) {
+          top: 831px;
+        }
+        
+        h2:nth-of-type(2) {
+          top: 3358px;
+        }
+        
+        h2:nth-of-type(3) {
+          top: 6399px;
+        }
+        
+        h2:nth-of-type(4) {
+          top: 9199px;
+        }
+      }
+      
+      .you-made-it {
+        width: 774px;
+        margin-bottom: 76px;
+      }
+      
+    }
+    
+    .back-to-top {
+      padding-bottom: 64px;
+    }
+  }
+}

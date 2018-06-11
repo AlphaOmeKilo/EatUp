@@ -1,3 +1,41 @@
+.single-media {
+  padding: 192px 0 0 162px;
+  
+  &-content {
+    margin-bottom: 48px;
+    
+    .image {
+      margin-top: 32px;
+      margin-bottom: 32px;
+    }
+    
+    .copy {
+      margin-bottom: 24px;
+    }
+    
+    .quote {
+      margin-bottom: 24px;
+    }
+    
+    .half-width-image {
+      margin-bottom: 24px;
+      
+      img {
+        width: 100%;
+      }
+    }
+    
+    .half-width-image:first-of-type {
+      padding-right: 12px;
+    }
+
+    .half-width-image:last-of-type {
+      padding-left: 12px;
+    }
+  }
+}
+
+
 .media {
   &-intro {
     height: calc(100vh - 52px);

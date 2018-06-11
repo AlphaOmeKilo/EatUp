@@ -41,6 +41,10 @@
       color: $grey;
       transition: color .25s;
       
+      .single-post & {
+        color: $black;
+      }
+      
       @include sm-desktop {
         li {
           font-size: 20px;

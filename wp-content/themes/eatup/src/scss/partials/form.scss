@@ -4,6 +4,7 @@
     background-color: transparent;
     border: none;
     margin-bottom: 64px;
+    border-bottom: 1px solid $white;
     
     &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
       color: $white;
@@ -26,7 +27,82 @@
   .section-label {
     margin-bottom: 48px;
   }
+
+  .othervalue-text {
+    display: none;
+    width: fit-content;
+    
+    &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+      color: $white;
+    }
+    &::-moz-placeholder { /* Firefox 19+ */
+      color: $white;
+    }
+    &:-ms-input-placeholder { /* IE 10+ */
+      color: $white;
+    }
+    &:-moz-placeholder { /* Firefox 18- */
+      color: $white;
+    }
+    
+    &.active {
+      display: inline-block;
+    }
+  }
   
+  .othervalue-label {
+    display: none;
+    
+    &.active {
+      display: inline-block;
+    }
+  }
+  
+  .switch-field {
+    margin-bottom: 48px;
+    display: flex;
+    align-items: center;
+    
+    input[type="radio"] {
+      position: absolute;
+      clip: rect(0, 0, 0, 0);
+      height: 1px;
+      width: 1px;
+      border: 0;
+      overflow: hidden;
+    }
+    
+    input:checked + label {
+      background-color: $white;
+      color: $light-green;
+    }
+    
+    label {
+      float: left;
+    }
+    
+    label:hover {
+      cursor: pointer;
+    }
+    
+    label:not(.othervalue-label) {
+      display: inline-block;
+    }
+    
+    label,
+    .othervalue-text {
+      background-color: transparent;
+      font-weight: normal;
+      text-align: center;
+      margin-right: 24px;
+      text-shadow: none;
+      padding: 6px 14px;
+      border: 1px solid $white;
+      color: $white;
+    }
+    
+  }
+
   .radio-group {
     
     &-choices {

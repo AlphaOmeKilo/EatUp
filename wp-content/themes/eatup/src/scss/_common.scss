@@ -128,6 +128,18 @@
       color: $pink;
       background-color: $white;
     }
+    
+    &-invert {
+      background-color: $white;
+      color: $pink;
+      border: none;
+      
+      &:hover {
+        border: 1px solid $white;
+        background-color: $pink;
+        color: $white;
+      }
+    }
   }
   
   &-purple {
@@ -148,7 +160,21 @@
       color: $light-blue;
       background-color: $white;
     }
+    
+    &-invert {
+      background-color: $white;
+      color: $light-blue;
+      border: none;
+      
+      &:hover {
+        border: 1px solid $white;
+        background-color: $light-blue;
+        color: $white;
+      }
+    }
   }
+  
+  
   
   &-deep-green {
     background-color: $deep-green;
@@ -173,10 +199,11 @@
   &-white {
     background-color: $white;
     border: 1px solid $white;
+    color: $black;
     
     &:hover {
       color: $white;
-      background-color: $white;
+      background-color: $black;
     }
   }
   

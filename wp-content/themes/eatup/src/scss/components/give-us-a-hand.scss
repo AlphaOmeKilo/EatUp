@@ -1,0 +1,278 @@
+.give-us-a-hand {
+  
+  &-intro {
+    width: 100%;
+    
+    &-content {
+      padding: 96px 48px 64px;
+      
+      .title,
+      .subtitle {
+        padding-left: 114px;
+      }
+      
+      .title {
+        margin-bottom: 32px;
+        margin-top: 128px;
+      }
+      
+      .subtitle {
+        a {
+          color: $grey;
+          text-decoration: underline;
+        }
+      }
+      
+      .image {
+        padding: 113px 65px 71px 18px;
+        width: 100%;
+        max-width: 463px;
+      }
+    }
+  }
+  
+  &-founder {
+    width: 100%;
+    
+    &-content {
+      padding: 128px 48px 96px;
+      
+      .title {
+        padding-left: 114px;
+      }
+      
+      .video {
+        
+        &-container {
+          padding: 64px 76px;
+        }
+      }
+    }
+  }
+  
+  &-serving {
+    width: 100%;
+    
+    &-content {
+      padding: 32px 48px;
+      
+      .title {
+        padding: 160px 64px 176px 114px;
+      }
+      
+      .video {
+        
+        &-container {
+          padding: 64px 76px;
+        }
+      }
+    }
+    
+    .sponsors {
+      padding: 192px 114px 192px 24px;
+      
+      .instruction {
+        max-width: 342px;
+        margin: 0 auto 12px;
+        text-align: center;
+      }
+      
+      &-logos {
+        
+        
+        .sponsor {
+          height: 64px;
+          margin-bottom: 12px;
+        }
+        
+        .sponsor:not(:nth-of-type(4)),
+        .sponsor:not(:nth-of-type(8)) {
+          padding-right: 24px;
+        }
+      }
+    }
+  }
+  
+  &-help {
+    width: 100%;
+    
+    &-content {
+      padding: 32px 48px;
+      
+      .title {
+        padding: 192px 64px 192px 114px;
+      }
+      
+      .image {
+        padding: 130px 180px 130px 90px;
+        width: 100%;
+      }
+    }
+    
+    &-pink {
+      width: 100%;
+      
+      &-content {
+        padding: 64px 0;
+        position: relative;
+        
+        .title {
+          width: 660px;
+          margin: 0 auto;
+          text-align: center;
+        }
+        
+        .image {
+          position: absolute;
+          
+          &-lunch {
+            width: 185px;
+            height: 237px;
+            bottom: -120px;
+            right: 34px;
+          }
+          
+          &-juice {
+            top: -138px;
+            left: 31px;
+            width: 187px;
+            height: 276px;
+          }
+        }
+      }
+    }
+  }
+  
+  &-steps {
+    width: 100%;
+    
+    &-content {
+      padding: 32px 48px;
+      
+      .step {
+        height: 640px;
+      }
+      
+      .step:nth-child(odd) {
+        .step-text {
+          float: right;
+          padding-left: 138px;
+        }   
+      }
+      
+      .step:nth-child(even) {
+        .step-text {
+          padding-left: 228px;
+        }   
+      }
+      
+      .step:nth-of-type(4) {
+        .step-image {
+          .image {
+            width: 50%;
+          }
+        }
+      }
+      
+      .step:last-of-type {
+        
+        .step-image {
+          .image {
+            position: absolute;
+            bottom: -32px;
+            right: 0;
+          }
+        }
+      }
+      
+      .step-image {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+
+        .image {
+          width: 75%;
+        }
+      }
+      
+      .step-text {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        
+        &-content {
+          
+          .title {
+            margin-bottom: 24px;
+          }
+          
+          .copy {
+            max-width: 432px;
+          }
+        }
+      }
+    }
+  }
+  
+  &-ready {
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    
+    &-content {
+      height: 640px;
+      
+      .text {
+        display: flex;
+        align-items: center;
+        height: 100%;
+        padding-left: 162px;
+        
+        &-content {
+          max-width: 432px;
+          
+          .title {
+            margin-bottom: 32px;
+          }
+          
+          .copy {
+            margin-bottom: 64px;
+          }
+          
+        }
+      }
+    }
+  }
+  
+  &-questions {
+    width: 100%;
+    
+    &-content {
+      padding: 96px 0 94px 162px;
+      
+      .title,
+      .copy {
+        margin-bottom: 40px;
+      }
+      
+      .contact {
+        display: flex;
+
+        &-icon {
+          margin-right: 12px;
+          float: left;
+        }
+
+        .phone {
+          margin-right: 48px;
+          float: left;
+        }
+
+        .email {
+          float: left;
+        }
+      }
+    }
+  }
+}
