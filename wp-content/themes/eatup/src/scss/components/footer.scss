@@ -2,10 +2,30 @@
   padding: 0 34px;
   height: $footer-height;
   
-  .menu {
+  @include mobile {
+    height: $footer-height-mobile;
+    padding: 0 19px;
+  }
+  
+  .menu-overlay-background & {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+  }
+  
+  .footer-menu {
     display: flex;
     align-items: center;
     height: 100%;
+    
+    @include mobile {
+      flex-wrap: wrap;
+    }
+    
+    .menu-overlay-background & {
+      height: $footer-height-mobile;
+    }
     
     &-link {
       color: $grey;

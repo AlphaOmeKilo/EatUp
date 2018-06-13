@@ -107,6 +107,17 @@
     
     &-choices {
       margin-bottom: 52px;
+      
+      @include mobile {
+        margin-bottom: 41px;
+      }
+    }
+    
+    .you-are {
+      @include mobile {
+        float: right;
+        padding-right: 16px;
+      }
     }
   }
   
@@ -116,6 +127,10 @@
     overflow-x: visible;
     float: left;
     
+    @include mobile {
+      display: inline-grid;
+    }
+    
     .radio {
       height: 0;
       width: 0;
@@ -124,12 +139,26 @@
         &::before {
           border: 5px solid $red;
           background: $white;
+          
+          .page-template-regional-form & {
+            border: 5px solid $light-blue;
+          }
         }
       }
       
       &-text {
         margin-right: 44px;
         width: 232px;
+        display: flex;
+        align-items: center;
+        
+        @include tablet {
+          margin-bottom: 16px;
+        }
+        
+        @include mobile {
+          margin-bottom: 8px;
+        }
         
         &::before {
           display: inline-block;
@@ -140,6 +169,10 @@
           border: 10px solid $red;
           border-radius: 50%;
           transition: all 0.25s linear;
+          
+          .page-template-regional-form & {
+            border: 10px solid $light-blue;
+          }
         }
       }
     }
@@ -154,9 +187,12 @@
     background-color: transparent;
     border: 1px solid $white;
     width: 100%;
-    max-width: 594px;
     height: 126px;
     margin-bottom: 32px;
+    
+    @include desktop {
+      max-width: 594px;
+    }
   }
   
   .form-footer {
@@ -164,13 +200,43 @@
     align-items: center;
     height: 40px;
     
+    @include mobile {
+      flex-wrap: wrap;
+      padding-bottom: 88px;
+      
+      .signup-a-school & { 
+        padding-bottom: 0;
+      }
+    }
+    
+    .newsletter {
+      @include desktop {
+        font-weight: bold;
+      }
+      
+      @include mobile {
+        margin-bottom: 48px;
+      }
+    }
+    
     .btn {
       position: absolute;
       right: 0;
       
+      @include mobile {
+        position: relative;
+        margin: 0 auto;
+      }
+      
       .signup-a-school & {
         width: 124px;
         right: calc(50% - 62px);
+        
+        @include mobile {
+          position: relative;
+          right: auto;
+          margin: 0 auto;
+        }
       }
     }
   }
@@ -180,4 +246,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  padding-top: 24px;
 }

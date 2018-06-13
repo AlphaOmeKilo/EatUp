@@ -6,15 +6,33 @@
     &-content {
       padding: 96px 48px 64px;
       
+      @include tablet {
+        padding: 160px 34px 52px;
+      }
+      
       .title,
       .copy {
-//        width: 546px;
-        padding-left: 114px;
+        
+        @include tablet {
+          padding-right: 16px;
+        }
+        
+        @include desktop {
+          padding-left: 114px;
+        }
       }
       
       .title {
-        margin-bottom: 24px;
-        padding-top: 124px;
+        
+        @include tablet {
+          margin-bottom: 32px;
+          
+        }
+        
+        @include desktop {
+          margin-bottom: 24px;
+          padding-top: 124px;
+        }
       }
       
       .copy {
@@ -28,7 +46,17 @@
         width: 100%;
         
         &-container {
-          padding: 114px 87px 49px 88px;
+          padding: 12% 87px 49px 88px;
+          
+          img {
+             max-width: 485px;
+          }
+         
+          
+          @include tablet {
+            padding: 96px 0 0;
+            max-width: 283px;
+          }
         }
       }
     }
@@ -40,20 +68,48 @@
     &-content {
       padding: 192px 162px 240px;
       
+      @include tablet {
+        padding: 64px 0 0;
+      }
+      
+      .help-stats {
+        @include tablet {
+          width: 581px;
+          text-align: center;
+          margin: 0 auto 80px;
+        }
+      }
+      
       .sponsors {
         padding-left: 195px;
         padding-right: 57px;
+        
+        @include tablet {
+          padding: 0;
+        }
       }
       
       .food-sponsor,
       .logistics-sponsor {
         padding-top: 12px;
+        
+        @include tablet {
+          height: 100%;
+          width: auto;
+        }
 
         &-container {
           display: flex;
           justify-content: center;
           height: 64px;
           margin-bottom: 32px;
+          
+          @include tablet {
+            display: block;
+            width: auto;
+            width: fit-content;
+            margin: 0 auto 64px;
+          }
         }
       }
 

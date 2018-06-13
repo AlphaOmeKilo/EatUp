@@ -11,7 +11,11 @@
   .logo {
     top: 0;
     left: 0;
-    width: 130px;
+    width: 91px;
+    
+    @include tablet {
+      width: 130px;
+    }
     
     @include desktop {
       width: 164px;
@@ -19,9 +23,15 @@
   }
   
   .donate {
-    top: 4px;
-    right: 8px;
-    width: 111px;
+    top: 0;
+    right: 0;
+    width: 87px;
+    
+    @include tablet {
+      top: 4px;
+      right: 8px;
+      width: 111px;
+    }
     
     @include desktop {
       top: 8px;
@@ -35,25 +45,92 @@
     justify-content: center;
     padding: 12px 14.1666% 0;
     width: 100%;
+    flex-wrap: wrap;
+    
+    @include tablet {
+      padding: 16px 20.83333% 0;
+    }
+    
+    .mobile-menu,
+    .mobile-close {
+      display: none;
+      
+      &.active {
+        display: block;
+      }
+    }
     
     &-link {
-      margin: 0 auto;
       color: $grey;
       transition: color .25s;
+      cursor: pointer;
+      
+      @include tablet {
+        margin-bottom: 8px;
+      }
       
       .single-post & {
         color: $black;
       }
       
-      @include sm-desktop {
-        li {
-          font-size: 20px;
-          line-height: 1.2;
-        }
-      }
-      
       &:hover {
         color: $pink;
+      }
+      
+      &-mobile {
+        border-bottom: 1px solid $white;
+        line-height: 1;
+      }
+    }
+    
+    &-link:not(:last-of-type) {
+      margin-right: 35px;
+      
+      @include tablet {
+        margin-right: 24px;
+      }
+      
+      @include mobile {
+        margin-right: 0;
+      }
+    }
+    
+    &-overlay {
+      display: none;
+      height: calc(100vh - 70px);
+      width: 100%;
+      z-index: 300;
+      position: fixed;
+      top: 0;
+      text-align: center;
+      padding-top: 128px;
+      padding-bottom: 128px;
+      overflow-y: scroll;
+      
+      &.active {
+        display: block;
+      }
+      
+      .menu-link {
+        margin-right: 16px;
+      }
+      
+      &-background {
+        display: none;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        z-index: 100;
+        
+        &.active {
+          display: block;
+        }
+        
+        .site-footer {
+          z-index: 400;
+        }
       }
     }
   }

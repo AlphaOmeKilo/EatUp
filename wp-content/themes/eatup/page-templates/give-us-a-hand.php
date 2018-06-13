@@ -124,11 +124,11 @@ get_header() ?>
           <b1 class="b2 black copy"><?php echo the_field('questions_copy'); ?></b1>
           <div class="contact">
             <a href="tel:<?php echo the_field('questions_phone'); ?>">
-              <img class="contact-icon" src="<?php eu_include('img/lets-talk/Phone-icn-white.svg'); ?>" alt="phone">
+              <img class="contact-icon" src="<?php eu_include('img/give-us-a-hand/Phone-icn.svg'); ?>" alt="phone">
               <b3 class="b3 black phone"><?php echo the_field('questions_phone'); ?></b3>
             </a>
             <a href="mailto:<?php echo the_field('questions_email'); ?>">
-              <img class="contact-icon" src="<?php eu_include('img/lets-talk/Mail-icn-white.svg'); ?>" alt="mail">
+              <img class="contact-icon" src="<?php eu_include('img/give-us-a-hand/Mail-icn.svg'); ?>" alt="mail">
               <b3 class="b3 black email"><?php echo the_field('questions_email'); ?></b3>
             </a>
           </div>  

@@ -17,9 +17,17 @@ eu.form.init = function() {
         type : 'post',
         data : $emailForm.serialize(),
         success: function(response) {
-          $emailForm.hide();
-          $(".form-response-container").height(height);
-          $(".form-response").text(response);
+          $responseParsed = jQuery.parseJSON( response );
+          console.log($responseParsed);
+          if($responseParsed.error) {
+            $(".form-response").text($responseParsed.error);
+            $emailForm.find('input[type=submit]').prop('disabled', false);
+            $emailForm.find('input[type=submit]').removeClass('active');
+          } else {
+            $emailForm.hide();
+            $(".form-response-container").height(height);
+            $(".form-response").text(response);
+          }
         },
         error: function(err) {
           $emailForm.find('input[type=submit]').prop('disabled', false);

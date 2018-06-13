@@ -1,5 +1,14 @@
 .single-media {
+  position: relative;
   padding: 192px 0 0 162px;
+  
+  @include tablet {
+    padding: 160px 34px 0; 
+  }
+  
+  @include mobile {
+    padding: 128px 20px 0;
+  }
   
   &-content {
     margin-bottom: 48px;
@@ -7,6 +16,11 @@
     .image {
       margin-top: 32px;
       margin-bottom: 32px;
+      
+      @include mobile {
+        margin-top: 24px;
+        margin: 20px;
+      }
     }
     
     .copy {
@@ -18,19 +32,97 @@
     }
     
     .half-width-image {
-      margin-bottom: 24px;
+      margin-bottom: 74px;
+      height: 19.22vw;
+      background-position: center;
+      background-size: cover;
+      width: calc(50% - 12px);
+      float: left;
       
-      img {
+      @include tablet {
+        margin-bottom: 48px;
+        height: 27.08vw;
+      }
+      
+      @include mobile {
         width: 100%;
+        height: 47.77vw;
+        margin-bottom: 20px;
       }
     }
     
     .half-width-image:first-of-type {
-      padding-right: 12px;
+      margin-right: 12px;
+      
+      @include mobile {
+        margin-right: 0;
+      }
     }
 
     .half-width-image:last-of-type {
-      padding-left: 12px;
+      margin-left: 12px;
+      
+      @include mobile {
+        margin-left: 0;
+        
+        margin-bottom: 252px;
+      }
+    }
+  }
+  .post-info {
+    position: fixed;
+    top: 192px;
+    right: 0;
+    height: 224px;
+    width: 252px;
+    padding: 34px 32px;
+    
+    @include mobile {
+      height: 192px;
+      top: auto;
+      position: absolute;
+      width: 100%;
+      bottom: 60px;
+    }
+    
+    .author {
+      margin-bottom: 24px;
+    }
+    
+    .date,
+    .author,
+    .share {
+      @include mobile {
+        text-align: center;
+      }
+    }
+    
+    .social-links {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 8px;
+      
+      @include mobile {
+        width: 172px;
+        margin: 12px auto 0;
+      }
+      
+      .social-link {
+        margin: 0 auto;
+        
+        img {
+          width: 35px;
+        }
+        
+        &:first-of-type {
+          margin-left: 0;
+          
+          @include mobile {
+            margin-left: auto;
+          }
+        }
+      }
     }
   }
 }
@@ -38,34 +130,82 @@
 
 .media {
   &-intro {
-    height: calc(100vh - 52px);
-    min-height: 760px;
     position: relative;
     
+    @include desktop {
+      height: calc(100vh - 52px);
+      min-height: 760px;
+    }
+    
     &-content {
-      display: flex;
-      align-items: center;
       height: 100%;
       padding: 224px 11.25% 192px;
       
+      @include tablet {
+        padding: 160px 12.1% 66px;
+      }
+      
+      @include mobile {
+        padding: 96px 20px 72px;
+      }
+      
       .featured-image {
         width: 100%;
+        
+        &-container {
+          @include desktop {
+            float: right;
+          }
+        }
       }
       
       &-text {
         padding-right: 24px;
+        padding-top: 24px;
         
         .headline {
           margin-bottom: 16px;
+          
+          @include tablet {
+            width: 461px;
+            margin: 0 auto 12px;
+            text-align: center;
+          }
+          
+          @include mobile {
+            max-width: 320px;
+            margin: 0 auto 16px;
+            text-align: center;
+          }
         }
 
         .blurb {
           margin-bottom: 32px;
+          
+          @include tablet {
+            width: 343px;
+            margin: 0 auto 12px;
+            text-align: center;
+          }
+          
+          @include mobile {
+            max-width: 320px;
+            margin: 0 auto 16px;
+            text-align: center;
+          }
         }
         
         .btn {
           margin-bottom: 88px;
           display: block;
+          
+          @include tablet {
+            margin: 0 auto;
+          }
+          
+          @include mobile {
+            margin: 0 auto;
+          }
         }
       }
     }
@@ -76,21 +216,62 @@
         bottom: -80px;
         right: 48px;
         width: 363px;
+        
+        @include tablet {
+          width: 207px;
+          right: 24px;
+          bottom: -24px;
+        }
+        
+        @include mobile {
+          width: 140px;
+          right: 0px;
+          bottom: -36px;
+        }
       }
       
       &-sandwich {
         left: -124px;
         height: 389px;
-        bottom: -80px;
+        bottom: -48px;
+        
+        @include tablet {
+          height: 280px;
+        }
       }
     }
   }
   
   &-articles {
     
+    .see-more {
+      text-align: center;
+      margin-bottom: 64px;
+      
+      @include mobile {
+        margin-bottom: 32px;
+      }
+      
+      a {
+        color: $black;
+        font-family: Value-Sans;
+        font-size: 18px;
+        font-weight: normal;
+        line-height: 1.33;
+      }
+    }
+    
     &-content {
       padding-top: 64px;
       padding: 64px 11.25%;
+      
+      @include tablet {
+        padding: 32px 34px;
+      }
+      
+      @include mobile {
+        padding: 36px 20px 16px; 
+      }
       
       .heading {
         margin-bottom: 24px;
@@ -99,6 +280,10 @@
       .filter {
         display: flex;
         margin-bottom: 32px;
+        
+        @include tablet {
+          margin-bottom: 22px;
+        }
         
         &-item {
           opacity: 0.15;

@@ -258,6 +258,11 @@
       
       .contact {
         display: flex;
+        
+        a {
+          display: flex;
+        }
+            
 
         &-icon {
           margin-right: 12px;

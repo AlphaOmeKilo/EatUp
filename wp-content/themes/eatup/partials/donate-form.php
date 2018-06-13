@@ -1,5 +1,5 @@
 <form id="contact-form" class="contact-form">
-  <input name="action" type="hidden" value="signup_a_school" id="form-action">
+  <input name="action" type="hidden" value="donate" id="form-action">
   
   <div class="contact-section clearfix">
     
@@ -50,8 +50,8 @@
     <b4 class="b4 white section-label">Payment Method</b4>
   
     <input id="card-number" class="contact-form-field b1 white col-sm-12" type="text" name="card_number" value="" placeholder="Card number" required>
-    <input id="expiry-date" class="contact-form-field b1 white col-sm-5"  type="text" name="expiry_date" value="" placeholder="Expiry date" required>
-    <input id="cvv" class="contact-form-field b1 white col-sm-5 col-sm-push-2" type="text" name="cvv" value="" placeholder="CVV" required>
+    <input id="expiry-date" class="contact-form-field b1 white col-sm-5"  type="text" name="expiry_date" value="" placeholder="Expiry date (MM/YY)" required>
+    <input id="cvv" class="contact-form-field b1 white col-sm-5 col-sm-push-2" type="password" name="cvv" value="" placeholder="CVV" required>
   </div>
   
   
@@ -62,7 +62,7 @@
   
   
   <div class="col-sm-12 form-footer">
-    <input class="btn btn-deep-green col-sm-3" type="submit" value="Submit">
+    <input class="btn btn-deep-green-invert col-sm-3" type="submit" value="Submit">
   </div>
   
 </form>

@@ -1,7 +1,6 @@
 eu.media = eu.media || {};
 
 eu.media.init = function() {
-  console.log('init');
   
   $('.see-more').on('click', function(e){
     e.preventDefault();

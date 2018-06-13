@@ -19,7 +19,8 @@ $deep-green     : #03AE8C;
 // DEVICES
 ////////////
 
-$footer-height : 52px;
+$footer-height        : 52px;
+$footer-height-mobile : 70px;
 
 $mobile-width : 768px;
 $tablet-width : 1024px;
@@ -67,7 +68,7 @@ $tablet-width : 1024px;
 ///////////
 
 $screen-sm : 768px;
-$screen-md : 1200px;
+$screen-md : 1024px;
 $screen-lg : 1440px;
 $gutter    : 0px;
 

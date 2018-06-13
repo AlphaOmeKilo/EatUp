@@ -12,7 +12,7 @@ get_header() ?>
 
 <div class="single-media bg-white;">
   <div class="single-media-content container">
-    <div class="col-xs-8">
+    <div class="col-md-8 col-xs-12">
       <div class="b1 black">Media</div>
       <h2 class="h2 black"><?php echo the_title(); ?></h2>
       <img class="col-xs-12 image" src="<?php echo the_field('featured_image'); ?>">
@@ -27,16 +27,30 @@ get_header() ?>
           <div class="col-xs-12">
             <?php $images = $content_item['half_width_image_gallery']; ?>
             <?php foreach($images as $image): ?>
-              <div class="col-xs-6 half-width-image">
-                <img src="<?php echo $image['url']; ?>">
+              <div class="half-width-image" style="background-image: url('<?php  echo $image['url'] ?>');">
               </div>
             <?php endforeach; ?>
           </div>
         <?php endif; ?>
       <?php endforeach; ?>
       
+      <a href="<?php eu_url('/media'); ?>" class="b3 black text-center">Go back</a>
     </div>
   </div>
+  
+  <div class="post-info bg-red">
+    <b3 class="b3 white date">Posted <?php echo the_date('j F'); ?></b3>
+    <b2 class="b2 white author"><?php echo get_the_author(); ?></b2>
+    <b3 class="b3 white share">Share</b3>
+    <div class="social-links">
+      <a class="social-link" href=""><img src="<?php eu_include('img/media/Share-Facebook.svg'); ?>"></a>
+      <a class="social-link" href=""><img src="<?php eu_include('img/media/Share-Twitter.svg'); ?>"></a>
+      <a class="social-link" href=""><img src="<?php eu_include('img/media/Share-Pinterest.svg'); ?>"></a>
+      <a class="social-link" href=""><img src="<?php eu_include('img/media/Share-Linkedin.svg'); ?>"></a>
+    </div>
+  </div>
+  
+  
   
 </div>
 

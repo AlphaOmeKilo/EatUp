@@ -1,0 +1,88 @@
+.video-overlay {
+  
+  &-background {
+    display: none;
+    position: fixed;
+    background-color: $black;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0.4;
+    z-index: 100;
+    
+    &.active {
+      display: block;
+    }
+  }
+  
+  &-foreground {
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 200;
+    
+    .video-container {
+      position: relative;
+      
+      iframe {
+        width: 320px;
+        height: 150px;
+        position: relative;
+        @include tablet {
+          
+          width: 672px;
+          height: 315px;
+        }
+        
+        @include desktop {
+          width: 960px;
+          height: 450px;
+        }
+        
+      }
+
+      .close {
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 40px;
+        width: 40px;
+        z-index: 300;
+        cursor: pointer;
+        
+        div {
+          position: absolute;
+          height: 18px;
+          width: 2px;
+          background-color: $white;
+        }
+        
+        div:first-of-type {
+          transform: rotate(45deg);
+          top: 11px;
+          left: 20px;
+        }
+        
+        div:last-of-type {
+          transform: rotate(-45deg);
+          top: 11px;
+          left: 20px;
+        }
+      }
+    }
+    
+    
+    
+    &.active {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  
+  
+}

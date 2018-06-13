@@ -12,11 +12,11 @@ get_header() ?>
   
   <div class="hey-thanks-intro bg-light-green">
     <div class="hey-thanks-intro-content container">
-      <div class="col-xs-6">
+      <div class="col-md-6 col-sm-7">
         <h1 class="h1 title grey"><?php echo the_field('title'); ?></h1>
         <p class="copy grey"><?php echo the_field('copy'); ?></p>
       </div>
-      <div class="col-xs-6 image-container">
+      <div class="col-md-6 col-sm-5 image-container">
         <img class="image image-money" src="<?php eu_include('img/hey-thanks/money.png'); ?>" alt="money">
       </div>
     </div>
@@ -24,10 +24,10 @@ get_header() ?>
   
   <div class="hey-thanks-help bg-light-blue">
     <div class="hey-thanks-help-content container">
-      <div class="col-xs-6">
+      <div class="col-md-6 col-xs-12">
         <h2 class="h2 grey help-stats"><?php echo the_field('help_stats'); ?></h2>
       </div>
-      <div class="col-xs-6 sponsors">
+      <div class="col-md-6 sponsors">
         <b3 class="b3 grey text-center"><?php echo the_field('food_sponsors_title'); ?></b3>
         <div class="food-sponsor-container">
           <?php $food_sponsors = get_field('food_sponsors'); ?>
@@ -50,7 +50,7 @@ get_header() ?>
     </div>
   </div>
   
-  <div class="hey-thanks-sangas bg-pink">
+  <div class="hey-thanks-sangas bg-pink desktop-only">
     <div class="hey-thanks-sangas-content container">
       <h2 class="h2 grey title"><?php echo the_field('sangas_title'); ?></h2>
       <h2 class="b1 grey subtitle"><?php echo the_field('sangas_instruction'); ?></h2>

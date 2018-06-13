@@ -39,9 +39,25 @@
     <header class="site-header">
       
       <a href="<?php eu_url('/'); ?>"><img src="<?php eu_include('img/header/eatup-logo.png'); ?>" class="logo"></a>
-      <a href="<?php eu_url('/donate-form'); ?>"><img src="<?php eu_include('img/header/donate-cloud.png'); ?>" class="donate"></a>
+      <a href="<?php eu_url('/donate-form'); ?>"><img src="<?php eu_include('img/header/donate-cloud.png'); ?>" class="donate not-mobile"></a>
+      <a href="<?php eu_url('/donate-form'); ?>"><img src="<?php eu_include('img/header/donate-cloud-mobile.png'); ?>" class="donate mobile-only"></a>
       
       <ul class="menu">
+        <a href="<?php eu_url(); ?>" class="menu-link not-mobile"><li class="b1">Home</li></a>
+        <a href="<?php eu_url('/donate-form'); ?>" class="menu-link not-mobile"><li class="b1">Donate</li></a>
+        <a href="<?php eu_url('/give-us-a-hand'); ?>" class="menu-link not-mobile"><li class="b1">Give us a hand</li></a>
+        <a href="<?php eu_url('/hey-thanks'); ?>" class="menu-link not-mobile"><li class="b1">Hey, thanks!</li></a>
+        <a href="<?php eu_url('/media'); ?>" class="menu-link not-mobile"><li class="b1">Media</li></a>
+        <a href="<?php eu_url('/signup-a-school'); ?>" class="menu-link not-mobile"><li class="b1">School signup</li></a>
+        <a href="<?php eu_url('/lets-talk'); ?>" class="menu-link not-mobile"><li class="b1">Let's talk</li></a>
+        <li class="b1 menu-link menu-link-mobile mobile-only mobile-menu active">Menu</li>
+        <li class="b1 menu-link menu-link-mobile mobile-only mobile-close">Close</li>
+      </ul>
+      
+      <div class="menu-overlay-background bg-pink">
+        <?php include(locate_template('partials/footer.php')); ?>
+      </div>
+      <div class="menu-overlay">
         <a href="<?php eu_url(); ?>" class="menu-link"><li class="b1">Home</li></a>
         <a href="<?php eu_url('/donate-form'); ?>" class="menu-link"><li class="b1">Donate</li></a>
         <a href="<?php eu_url('/give-us-a-hand'); ?>" class="menu-link"><li class="b1">Give us a hand</li></a>
@@ -49,6 +65,6 @@
         <a href="<?php eu_url('/media'); ?>" class="menu-link"><li class="b1">Media</li></a>
         <a href="<?php eu_url('/signup-a-school'); ?>" class="menu-link"><li class="b1">School signup</li></a>
         <a href="<?php eu_url('/lets-talk'); ?>" class="menu-link"><li class="b1">Let's talk</li></a>
-      </ul>
+      </div>
       
     </header>

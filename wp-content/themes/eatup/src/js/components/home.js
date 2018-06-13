@@ -54,6 +54,25 @@ eu.home.init = function() {
     }
   });
   
+  
+  //Play video on click
+  
+  $originalVideoSource = $('iframe').attr('src');
+  
+  $('#watch-vid-btn').on('click tap', function(e) {
+    e.preventDefault();
+    $('iframe').attr('src', $originalVideoSource);
+    $('.video-overlay').addClass('active');
+  });
+  
+  $('.video-overlay .close').on('click tap', function(e) {
+    e.preventDefault();
+    
+    $('.video-overlay').removeClass('active');
+    $('iframe').attr('src',"");
+  })
+  
+  
 }
 
 jQuery.fn.reverse = [].reverse;
