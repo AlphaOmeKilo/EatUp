@@ -22,32 +22,31 @@ get_header() ?>
   <div class="home-intro bg-light-green">
     <div class="home-intro-content container">
       
-      <div class="col-md-5 col-md-push-1 copy-container">
+      <div class="col-md-5 col-md-push-1 col-sm-7 copy-container">
         <h1 class="h1 grey heading"><?php echo the_field('t1_heading'); ?></h1>
         <h3 class="h3 white sub-heading"><?php echo the_field('t1_sub_heading'); ?></h3>
         <div id="watch-vid-btn" class="btn btn-deep-green">Watch video</div>
       </div>
-      <div class="col-md-5 col-md-push-2 image-container">
+      <div class="col-md-5 col-md-push-2 col-sm-5 image-container">
         <img src="<?php eu_include('img/home/pink-carrots.png') ?>" class="tile-image tile-image-carrots">
       </div>
-      
-      <img src="<?php eu_include('img/home/cloud.png'); ?>" class="cloud">
-      <div class="cloud-statistics">
-        <b4 class="b4 black"><?php echo the_field('cloud_statistic_header'); ?></b4>
-        <b5 class="b5 black"><?php echo the_field('cloud_statistic_value'); ?></b5>
-      </div>
     </div>
+    <div class="cloud-statistics">
+      <b4 class="b4 black"><?php echo the_field('cloud_statistic_header'); ?></b4>
+      <b5 class="b5 black"><?php echo the_field('cloud_statistic_value'); ?></b5>
+    </div>
+    <img src="<?php eu_include('img/home/cloud.png'); ?>" class="cloud">
   </div>
   
   <div class="home-whats-this-about bg-pink">
     <div class="home-whats-this-about-content container">
-      <div class="col-md-5 col-md-push-1 image-container">
-        <img src="<?php eu_include('img/home/sandwich.png') ?>" class="tile-image tile-image-sandwich">
-      </div>
-      <div class="col-md-5 col-md-push-1 copy-container">
+      <div class="col-md-5 col-md-pull-1 col-xs-12 copy-container">
         <b1 class="b1 grey title"><?php echo the_field('t2_title'); ?></b1>
         <h2 class="h2 grey heading"><?php echo the_field('t2_heading'); ?></h2>
         <b2 class="b2 grey copy"><?php echo the_field('t2_copy'); ?></b2>
+      </div>
+      <div class="col-md-6 col-xs-12 image-container">
+        <img src="<?php eu_include('img/home/sandwich.png') ?>" class="tile-image tile-image-sandwich">
       </div>
     </div>
   </div>
@@ -55,27 +54,25 @@ get_header() ?>
   <div class="home-what-do-you-do bg-purple">
     <div class="home-what-do-you-do-content container">
     
-      <div class="col-md-5 col-md-push-1 copy-container">
+      <div class="col-md-5 col-md-push-1 col-xs-12 copy-container">
         <b1 class="b1 grey title"><?php echo the_field('t3_title'); ?></b1>
         <h2 class="h2 grey heading"><?php echo the_field('t3_heading'); ?></h2>
         <b2 class="b2 grey copy"><?php echo the_field('t3_copy'); ?></b2>
       </div>
-      <div id="interactive-photos" class="col-md-5 col-md-push-2 image-container">
+      <div id="interactive-photos" class="col-md-5 col-md-push-2 col-xs-12 image-container">
         <?php $photos = get_field('t3_images'); ?>
         <?php foreach($photos as $photo): ?>
         <div style="background-image: url('<?php echo $photo['url']; ?>')" class="interactive-photo"></div>
         <?php endforeach; ?>
       </div>
-      
+    
     </div>
   </div>
   
   <div class="home-what-can-i-do bg-light-blue">
     <div class="home-what-can-i-do-content container">
-      <div class="col-md-6 col-md-push-1 image-container">
-        <img src="<?php eu_include('img/home/map.png') ?>" class="tile-image tile-image-map">
-      </div>
-      <div class="col-md-5 copy-container">
+      
+      <div class="col-md-5 col-md-pull-1 col-xs-12 copy-container">
         <b1 class="b1 grey title"><?php echo the_field('t4_title'); ?></b1>
         <h2 class="h2 grey heading"><?php echo the_field('t4_heading'); ?></h2>
         <b2 class="b2 grey copy"><?php echo the_field('t4_copy'); ?></b2>
@@ -88,6 +85,11 @@ get_header() ?>
           <?php endforeach;?>
         </div>
       </div>
+      
+      <div class="col-md-6 col-xs-12 image-container">
+        <img src="<?php eu_include('img/home/map.png') ?>" class="tile-image tile-image-map">
+      </div>
+      
     </div>
   </div>
   
@@ -99,7 +101,7 @@ get_header() ?>
       <?php $ways_to_help = get_field('ways_to_help'); ?>
       <?php foreach($ways_to_help as $help): ?>
         <div class="col-xs-12 help-container">
-          <div class="col-xs-6 text-content">
+          <div class="col-sm-6 col-xs-12 text-content">
             <h3 class="h3 deep-green help-title"><?php echo $help['title']; ?></h3>
             <?php $options = $help['option']; ?>
             <?php foreach($options as $option): ?>
@@ -109,7 +111,7 @@ get_header() ?>
             <?php endforeach; ?>        
           </div>
 
-          <div class="col-xs-6 image-content">
+          <div class="col-sm-6 col-xs-12 image-content">
             <img src="<?php echo $help['image']; ?>">
           </div>
         </div>
@@ -118,80 +120,100 @@ get_header() ?>
   </div>
   
   <div class="home-interact">
-    <div class="col-xs-6 bg-purple home-interact-content">
+    <div class="col-sm-6 col-xs-12 bg-purple home-interact-content">
       <div class="home-interact-left container-half">
         <div>
           <?php $left = get_field('left_tile'); ?>
           <b1 class="b1 white title"><?php echo $left['title']; ?></b1>
           <h2 class="h2 white heading"><?php echo $left['heading']; ?></h2>
           <b2 class="b2 white copy"><?php echo $left['copy']; ?></b2>
-          <a href="" class="btn btn-purple-invert">Like us on facebook</a>
-          <a href="" class="btn btn-purple-invert">Share a food fact</a>
+          <div class="btn-container">
+            <a href="" class="btn btn-purple-invert">Like us on facebook</a>
+          </div>
+          
         </div>
       </div>
     </div>
-    <div class="col-xs-6 bg-red home-interact-content">
+    <div class="col-sm-6 col-xs-12 bg-red home-interact-content">
       <div class="home-interact-right container-half">
         <div>
           <?php $right = get_field('right_tile'); ?>
           <b1 class="b1 white title"><?php echo $right['title']; ?></b1>
           <h2 class="h2 white heading"><?php echo $right['heading']; ?></h2>
           <b2 class="b2 white copy"><?php echo $right['copy']; ?></b2>
-          <a href="" class="btn btn-red-invert">Sign up a school</a>
+          <div class="btn-container">
+            <a href="" class="btn btn-red-invert">Sign up a school</a>
+          </div>
         </div>
       </div>
     </div>
     
-    <img class="image image-sandwich" src="<?php eu_include('img/home/sandwich-top.png'); ?>" alt="sandwich">
-    <img class="image image-milk" src="<?php eu_include('img/home/milk.png'); ?>" alt="milk">
-    <img class="image image-yoghurt" src="<?php eu_include('img/home/yoghurt.png'); ?>" alt="yoghurt">
+    <img class="image image-sandwich not-mobile" src="<?php eu_include('img/home/sandwich-top.png'); ?>" alt="sandwich">
+    <img class="image image-milk not-mobile" src="<?php eu_include('img/home/milk.png'); ?>" alt="milk">
+    <img class="image image-yoghurt not-mobile" src="<?php eu_include('img/home/yoghurt.png'); ?>" alt="yoghurt">
   </div>
   
   <div class="media-articles-content container">
-      <h2 class="h2 black heading">What's New?</h2>
-      
-      <div class="post-container col-sm-12">
-      <?php
-        
-        $paged = get_query_var('paged') ? get_query_var('paged') : 1;
-        
-          $args = array(
-            'post_type' => 'post',
-            'posts_per_page' => 2, 
-            'offset' => 1,
-            'paged' => $paged
-          );
+    <h2 class="h2 black heading">What's New?</h2>
 
-          $temp = $wp_query; $wp_query= null;
-          $wp_query = new WP_Query($args);
-          while ($wp_query->have_posts()) : $wp_query->the_post(); 
-        
-        
-          $link = get_permalink(); 
-      
-      ?>
+    <div class="post-container col-sm-12">
+    <?php
 
-          <a class="post col-sm-6" href="<?php echo $link; ?>">
-            <img class="post-image" src="<?php echo the_field('featured_image'); ?>">
+
+        $args = array(
+          'post_type' => 'post',
+          'posts_per_page' => 4, 
+        );
+
+        $temp = $wp_query; $wp_query= null;
+        $wp_query = new WP_Query($args);
+        while ($wp_query->have_posts()) : $wp_query->the_post(); 
+
+
+        $link = get_permalink(); 
+
+    ?>
+
+        <a class="post" href="<?php echo $link; ?>" style="background-image: url('<?php echo the_field('featured_image'); ?>')">
             <b1 class="b1 white post-title"><?php echo the_title(); ?></b1>
             <b2 class="b2 white post-date"><?php echo get_the_date('d M'); ?></b2>
           </a>
 
-          <?php endwhile; 
-          wp_reset_postdata();?>
-          
-        </div>
-      
-        <?php if ( $wp_query->max_num_pages > $paged ) : ?>
-          <div class="see-more <?php echo $paged; ?>">
-            <?php next_posts_link( 'See More' ); ?>
+        <?php endwhile; 
+        $wp_query = $temp;
+        wp_reset_postdata();?>
+
+      </div>
+
+      <a href="<?php eu_url('/media'); ?>" class="see-more-home b3 black text-center">See More</a>
+  </div>
+  
+</div>
+
+<div class="lets-talk bg-white">
+  <div class="lets-talk-content container">
+    
+    <div class="col-sm-12">
+      <div class="col-md-5 col-xs-12">
+        <h2 class="h2 black title"><?php echo the_field('form_title'); ?></h2>
+        <b2 class="b2 black copy"><?php echo the_field('form_copy'); ?></b2>
+        <div class="contact">
+          <div class="contact-line">
+            <img class="contact-icon" src="<?php eu_include('img/home/Phone-icn.svg'); ?>" alt="phone">
+            <b2 class="b3 black phone"><?php echo the_field('form_phone_number'); ?></b2>
           </div>
-        <?php endif;  ?>
+          <div class="contact-line">
+            <img class="contact-icon" src="<?php eu_include('img/home/Mail-icn.svg'); ?>" alt="mail">
+            <b2 class="b3 black email"><?php echo the_field('form_email'); ?></b2>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-7 col-sm-10 col-sm-push-1 col-xs-12 form-container">
+         <?php include(locate_template('partials/home-contact-form.php')); ?>
+      </div>
     </div>
-  
-  
-  
-  
+  </div>
+  <img class="banana desktop-only" src="<?php eu_include('img/home/Banana.png'); ?>" alt="banana">
 </div>
 
 <?php get_footer() ?>

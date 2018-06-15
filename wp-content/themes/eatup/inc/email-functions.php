@@ -6,6 +6,50 @@
  * @since eatup 1.0
  */
 
+function add_to_mailing_list($email) {
+  
+  //MailChimp API key
+  $api_key = '22f6282d18dbe71bd148cafd36e5d984-us16';
+  $list_id = '38765939a5';
+  
+  $eu_data = array(
+    'email_address' => $email,
+    'list_id' => $list_id,
+    'status' => 'subscribed'
+  );
+  
+  $url = 'https://us16.api.mailchimp.com/3.0/lists/' . $list_id . '/members/';
+
+  $encoded_eu_data = json_encode($eu_data);
+
+  $ch = curl_init();
+
+  curl_setopt($ch, CURLOPT_URL, $url);
+  curl_setopt($ch, CURLOPT_USERPWD, 'user:' . $api_key);
+  curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
+  curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+  curl_setopt($ch, CURLOPT_TIMEOUT, 10);
+  curl_setopt($ch, CURLOPT_POST, 1);
+  curl_setopt($ch, CURLOPT_POSTFIELDS, $encoded_eu_data);
+  curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+
+  $results = curl_exec($ch);
+  $response = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+  $errors = curl_error($ch); 
+
+  curl_close($ch);
+
+  $results = array(
+    'results' => $results,
+    'response' => $response,
+    'errors' => $errors
+  );
+
+  return $results;
+}
+
+add_action('admin_post_nopriv_add_to_mailing_list', 'add_to_mailing_list'); 
+add_action('admin_post_add_to_mailing_list', 'add_to_mailing_list');
 
 function signup_a_school() {
   
@@ -22,7 +66,7 @@ function signup_a_school() {
     !isset($_POST['email']) ||
     !isset($_POST['contact_no']) ||
     !isset($_POST['message'])) {
-    died('You are missing some mandatory fields!');       
+    die(json_encode(array('error' => 'You are missing some mandatory fields!'))); 
   }
   
   $first_name = $_POST["first_name"];
@@ -61,9 +105,8 @@ function signup_a_school() {
   'X-Mailer: PHP/' . phpversion();
   @mail($email_to, $email_subject, $email_message, $headers);
   
-  echo "Thanks, we’ll be in touch soon!";
-
-    
+  echo json_encode(array('success' => "Thanks, we’ll be in touch soon!"));
+  
   return;
   die();
 }
@@ -80,7 +123,7 @@ function help_us_out() {
     !isset($_POST['help-type']) ||
     !isset($_POST['contact_no']) ||
     !isset($_POST['message'])) {
-    died('You are missing some mandatory fields!');       
+    ddie(json_encode(array('error' => 'You are missing some mandatory fields!')));       
   }
   
   $first_name = $_POST["first_name"];
@@ -89,6 +132,10 @@ function help_us_out() {
   $contact = $_POST["contact_no"];
   $message = $_POST["message"];
   $help_type = $_POST['help-type'];
+  
+  if(isset($_POST['checkbox']) && $_POST['checkbox'] == 1) {
+    add_to_mailing_list($email);
+  }
   
   $email_to = "alexwokeeffe@gmail.com";
   $email_subject = "Help us out - Enquiry";
@@ -104,7 +151,7 @@ function help_us_out() {
   'X-Mailer: PHP/' . phpversion();
   @mail($email_to, $email_subject, $email_message, $headers);
   
-  echo "Thanks, we’ll be in touch soon!";
+  echo json_encode(array('success' => "Thanks, we’ll be in touch soon!"));
 
     
   return;
@@ -121,7 +168,7 @@ function lets_talk_contact() {
     !isset($_POST['email']) ||
     !isset($_POST['contact_no']) ||
     !isset($_POST['message'])) {
-    died('You are missing some mandatory fields!');       
+    die(json_encode(array('error' => 'You are missing some mandatory fields!')));      
   }
   
   $first_name = $_POST["first_name"];
@@ -129,6 +176,10 @@ function lets_talk_contact() {
   $email = $_POST["email"];
   $contact = $_POST["contact_no"];
   $message = $_POST["message"];
+  
+  if(isset($_POST['checkbox']) && $_POST['checkbox'] == 1) {
+    add_to_mailing_list($email);
+  }
   
   $email_to = "eatup@eatup.org.au";
   $email_subject = "Let's Talk - Enquiry";
@@ -143,9 +194,8 @@ function lets_talk_contact() {
   'X-Mailer: PHP/' . phpversion();
   @mail($email_to, $email_subject, $email_message, $headers);
   
-  echo "Thanks, we’ll be in touch soon!";
+  echo json_encode(array('success' => "Thanks, we’ll be in touch soon!"));
 
-    
   return;
   die();
 }

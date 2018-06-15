@@ -8,6 +8,18 @@
 
 // util
 
+function isMobile() {
+  return eu.globals.windowWidth < 768;
+}
+
+function isTablet() {
+  return eu.globals.windowWidth < 1024;
+}
+
+function isDesktop() {
+  return eu.globals.windowWidth > 1023;
+}
+
 function isDefined(obj) {
   return typeof obj !== "undefined" && obj != null;
 }

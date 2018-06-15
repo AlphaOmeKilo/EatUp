@@ -18,7 +18,6 @@ eu.form.init = function() {
         data : $emailForm.serialize(),
         success: function(response) {
           $responseParsed = jQuery.parseJSON( response );
-          console.log($responseParsed);
           if($responseParsed.error) {
             $(".form-response").text($responseParsed.error);
             $emailForm.find('input[type=submit]').prop('disabled', false);
@@ -26,7 +25,7 @@ eu.form.init = function() {
           } else {
             $emailForm.hide();
             $(".form-response-container").height(height);
-            $(".form-response").text(response);
+            $(".form-response").text($responseParsed.success);
           }
         },
         error: function(err) {
@@ -77,6 +76,15 @@ eu.form.init = function() {
   $('.switch-field-choices input').on('click', function() {
     calculateDonation();
   });
+  
+  if(isMobile()) {
+    console.log('removing');
+    $('#donation_amount_left').remove();
+    $('#donation_amount_left_label').remove();
+    $('#donation_amount_center').remove();
+    $('#donation_amount_center').remove();
+    $('#donation_amount_center_label').remove();
+  }
   
 
   initEmailFormListener();

@@ -4,6 +4,14 @@
   &-content {
     padding: 192px 11.25% 0;
     
+    @include tablet {
+      padding: 160px 12.23% 0;
+    }
+    
+    @include mobile {
+      padding: 128px 20px 0;
+    }
+    
     .contact-icon {
       float: left;
       margin-right: 12px;
@@ -17,20 +25,49 @@
     
     .copy {
       margin-bottom: 24px;
-    }
-    
-    .copy {
       width: 318px;
+      
+      @include tablet {
+        max-width: 461px;
+        margin: 0 auto 32px;
+        text-align: center;
+      }
+      
+      @include mobile {
+        max-width: 320px;
+        margin: 0 auto 32px;
+        text-align: center;
+      }
     }
     
     .title {
       width: 432px;
       padding-top: 32px;
+      
+      @include tablet {
+        max-width: 461px;
+        margin: 0 auto 16px;
+        text-align: center;
+      }
+      
+      @include mobile {
+        max-width: 320px;
+        margin: 0 auto 16px;
+        text-align: center;
+      }
     }
     
     
     .form-container {
       padding: 32px 0 24px 66px;
+      
+      @include tablet {
+        padding: 48px 0 64px;
+      }
+      
+      @include mobile {
+        padding: 48px 0 0;
+      }
     }
   }
 }

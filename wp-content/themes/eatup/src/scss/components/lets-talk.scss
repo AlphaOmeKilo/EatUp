@@ -5,6 +5,12 @@
     padding-top: 160px;
     width: 100%;
     
+    @include tablet {
+      .home & {
+        padding-top: 41px;
+      }
+    }
+    
     @include desktop {
       display: flex;
       align-items: center;
@@ -89,6 +95,7 @@
     }
     
     .title {
+      margin-top: 36px;
       
       @include mobile {
         margin: 0 auto 16px;
@@ -135,5 +142,12 @@
     bottom: 0;
     left: -162px;
     height: 461px;
+  }
+  
+  .banana {
+    position: absolute;
+    top: -58px;
+    left: 48px;
+    width: 318px;
   }
 }

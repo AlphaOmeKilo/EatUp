@@ -1,0 +1,35 @@
+.refund-policy {
+  width: 100%;
+  
+  &-content {
+    padding: 224px 162px 64px;
+    
+    @include tablet {
+      padding: 160px 34px 32px;
+    }
+    
+    @include mobile {
+      padding: 100px 20px 24px;
+    }
+    
+    .title {
+      margin-bottom: 32px;
+    }
+    
+    p {
+      font-family: $value-sans;
+      font-size: 24px;
+      font-weight: normal;
+      line-height: 1.33;
+      
+      @include tablet {
+        font-size: 20px;
+        line-height: 1.2;
+      }
+      
+      a {
+        color: $light-green;
+      }
+    }
+  }
+}

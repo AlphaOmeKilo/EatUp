@@ -47,11 +47,16 @@ eu.home.init = function() {
   });
   
   $(window).on('scroll', function() {
-    if ($('#interactive-photos').visible()) {
+    if (!isDesktop()) {
       $fanPhotos();
     } else {
-      $collectPhotos();
+      if ($('#interactive-photos').visible()) {
+        $fanPhotos();
+      } else {
+        $collectPhotos();
+      }
     }
+    
   });
   
   

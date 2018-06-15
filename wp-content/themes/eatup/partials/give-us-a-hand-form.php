@@ -32,8 +32,11 @@
   <textarea id="contact-message" class="b1 white" name="message" rows="8" cols="80" placeholder="" required></textarea>
   
   <div class="col-sm-12 form-footer">
-    <div class="b2 white newsletter col-sm-9 col-xs-12">I agree to receiving a newsletter from Eat Up</div>
-    <input class="btn btn-pink-invert col-sm-3" type="submit" value="Submit">
+    <div class="newsletter col-sm-8 col-xs-12">
+      <b2 class="b2 white newsletter-text">I agree to receiving a newsletter from Eat Up</b2>
+      <input id="checkBox" type="checkbox" name="checkbox" value="1" class="newsletter-checkbox">
+    </div>
+    <input class="btn btn-pink-invert col-sm-4" type="submit" value="Submit">
   </div>
   
 </form>

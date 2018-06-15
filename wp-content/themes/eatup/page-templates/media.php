@@ -56,12 +56,14 @@ get_header() ?>
     
     
     <div class="media-articles-content container">
-      <h1 class="h1 black heading">Media</h1>
+      <h1 class="h1 black heading">All posts</h1>
+<!--
       <ul class="filter">
         <li class="filter-item b3 black active">All</li>
         <li class="filter-item black b3">Recent</li>
         <li class="filter-item black b3">Filter by date</li>
       </ul>
+-->
       
       <div class="post-container col-sm-12">
       <?php
@@ -81,9 +83,7 @@ get_header() ?>
       
       ?>
 
-          <a class="post col-sm-6" href="<?php echo $link; ?>">
-            <?php print_r($paged_again); ?>
-            <img class="post-image" src="<?php echo the_field('featured_image'); ?>">
+          <a class="post" href="<?php echo $link; ?>" style="background-image: url('<?php echo the_field('featured_image'); ?>')">
             <b1 class="b1 white post-title"><?php echo the_title(); ?></b1>
             <b2 class="b2 white post-date"><?php echo get_the_date('d M'); ?></b2>
           </a>

@@ -1,0 +1,60 @@
+.privacy-policy {
+  width: 100%;
+  
+  &-content {
+    padding: 224px 162px 64px;
+    
+    @include tablet {
+      padding: 160px 34px 32px;
+    }
+    
+    @include mobile {
+      padding: 100px 20px 24px;
+    }
+    
+    .title {
+      margin-bottom: 32px;
+    }
+    
+    h5 {
+      font-family: $value-sans;
+      font-size: 24px;
+      font-weight: normal;
+      line-height: 1.33;
+      margin-top: 32px;
+      
+      @include tablet {
+        font-size: 20px;
+        font-weight: normal;
+        line-height: 1.2;
+      }
+    }
+    
+    p,
+    li {
+      font-family: $atsurt-reg;
+      font-size: 18px;
+      font-weight: normal;  
+      line-height: 1.33;
+    }
+    
+    a {
+      color: $light-green;
+    }
+    
+    ul {
+      margin: 24px 0 24px 24px;
+      
+      
+      li {
+        list-style:disc;
+      }
+    }
+    
+    .section-right {
+      @include desktop {
+        padding-left: 24px;
+      }
+    }
+  }
+}

@@ -2,12 +2,33 @@
   
   &-intro {
     width: 100%;
+    position: relative;
     
     &-content {
-      padding-top: 224px;
+      padding-top: 132px;
+      
+      @include tablet {
+        padding-top: 160px;
+      }
+      
+      @include desktop {
+        padding-top: 224px;
+      }
       
       .copy-container {
         padding-left: 42px;
+        position: relative;
+        z-index: 5;
+        
+        @include tablet {
+          padding-left: 34px;
+          padding-right: 16px;
+        }
+        
+        @include mobile {
+          padding-left: 20px;
+          padding-right: 20px;
+        }
         
         .heading,
         .sub-heading {
@@ -16,37 +37,99 @@
         
         .sub-heading {
           width: 546px;
+          
+          @include tablet {
+            width: auto;
+            margin-bottom: 52px;
+          }
+          
+          @include mobile {
+            max-width: 320px;
+            margin-bottom: 40px;
+          }
         }
         
         .btn {
           margin-bottom: 120px;
+          
+          @include tablet {
+            margin-bottom: 88px;
+          }
         }
       }
       
       .image-container {
         position: relative;
         
+        @include tablet {
+          display: flex;
+          justify-content: center;
+        }
+        
         .tile-image {
+          @include tablet {
+            padding-right: 34px;
+          }
         
           &-carrots {
             position: absolute;
             height: 576px;
             top: -103px;
+            
+            @include tablet {
+              top: auto;
+              height: auto;
+              position: relative;
+              max-height: 310px;
+            }
+            
+            @include mobile {
+              position: absolute;
+              height: 379px;
+              bottom: 12px;
+              top: auto;
+              right: -216px;
+              z-index: 1;
+            }
           }
         }
       }
+    }
+    
+    .cloud {
+      position: absolute;
+      width: 204px;
+      bottom: 18px;
+      right: 48px;
+      z-index: 5;
       
-      .cloud {
+      @include tablet {
+        width: 163px;
+        right: 35px;
+      }
+      
+      @include mobile {
+        width: 115px;
+        right: 20px;
+        bottom: 16px;
+      }
+
+      &-statistics {
+        text-align: center;
         position: absolute;
-        width: 204px;
-        bottom: 72px;
-        right: 48px;
+        bottom: 80px;
+        right: 72px;
+        z-index: 10;
         
-        &-statistics {
-          text-align: center;
-          position: absolute;
-          bottom: 134px;
-          right: 72px;
+        @include tablet {
+          bottom: 65px;
+          right: 43px;
+        }
+        
+        @include mobile {
+          width: 96px;
+          bottom: 38px;
+          right: 29px;
         }
       }
     }
@@ -56,26 +139,94 @@
     width: 100%;
     
     &-content {
-      padding-top: 160px;
-      padding-bottom: 188px;
+      padding-top: 32px;
+      padding-bottom: 32px;
+      
+      @include tablet {
+        padding-bottom: 96px;
+      }
+      
+      @include mobile {
+        padding-top: 0;
+      }
       
       .copy-container {
-        padding-right: 42px;
-        padding-left: 24px;
+        padding: 128px 42px 0 24px;
+        float: right;
+        
+        @include tablet {
+          padding: 64px 0 0;
+        }
+        
+        @include mobile {
+          padding: 48px 0 0;
+        }
+        
+        .title {
+          @include tablet {
+            text-align: center;
+          }
+          
+          @include mobile {
+            text-align: center;
+          }
+        }
         
         .heading {
           margin: 32px 0;
+          
+          @include tablet {
+            text-align: center;
+          }
+          
+          @include mobile {
+            text-align: center;
+            margin: 16px 0;
+          }
+        }
+        
+        .copy {
+          @include tablet {
+            max-width: 461px;
+            margin: 0 auto 12px;
+            text-align: center;
+          }
+          
+          @include mobile {
+            max-width: 320px;
+            margin: 0 auto 40px;
+            text-align: center;
+          }
         }
       }
       
       .image-container {
         position: relative;
+        padding: 58px 74px 58px 123px;
+        display: flex;
+        align-items: center;
+        
+        @include tablet {
+          padding: 19px 0 0;
+          justify-content: center;
+        }
+        
+        @include mobile {
+          padding: 16px 28px 0;
+        }
+        
+        @include desktop {
+          height: stretch;
+        }
         
         .tile-image {
         
           &-sandwich {
-            position: absolute;
-            top: -69px;
+            width: 100%;
+            
+            @include tablet {
+              max-width: 264px;
+            }
           }
         }
       }
@@ -88,11 +239,58 @@
     &-content {
       padding: 128px 0 144px;
       
+      @include tablet {
+        padding: 96px 0 0;
+        position: relative;
+      }
+      
+      @include mobile {
+        padding: 48px 0 0;
+        position: relative;
+      }
+      
       .copy-container {
-        padding-left: 42px;
+        
+        @include desktop {
+          padding-left: 42px;
+        }
+        
+        .title {
+          @include tablet {
+            text-align: center;
+          }
+          
+          @include mobile {
+            text-align: center;
+          }
+        }
         
         .heading {
           margin: 32px 0 40px;
+          
+          @include tablet {
+            text-align: center;
+            margin: 16px 0 32px;
+          }
+          
+          @include mobile {
+            text-align: center;
+            margin: 16px 0;
+          }
+        }
+        
+        .copy {
+          @include tablet {
+            max-width: 461px;
+            margin: 0 auto 24px;
+            text-align: center;
+          }
+          
+          @include mobile {
+            max-width: 320px;
+            margin: 0 auto 24px;
+            text-align: center;
+          }
         }
       }
       
@@ -100,6 +298,17 @@
         position: relative;
         margin: -98px;
         height: 576px;
+        
+        @include tablet {
+          margin: 0;
+          margin-bottom: -216px;
+        }
+        
+        @include mobile {
+          margin: 0;
+          text-align: center;
+          height: 286px;
+        }
         
         .interactive-photo {
           position: absolute;
@@ -115,6 +324,20 @@
           box-sizing: content-box;
           transition: all 1s;
           cursor: pointer;
+          
+          @include tablet {
+            height: 289px;
+            width: 289px;
+          }
+          
+          @include mobile {
+            height: 210px;
+            width: 210px;
+            top: auto;
+            bottom: calc(50% - 210px);
+            left: calc(50% - 138px);
+          }
+
         }
       }
     }
@@ -122,28 +345,114 @@
   
   &-what-can-i-do {
     width: 100%;
+    z-index: 50;
+    
+    @include tablet {
+      position: relative;
+    }
+    
+    @include mobile {
+      position: relative;
+    }
     
     &-content {
       padding-top: 160px;
       padding-bottom: 96px;
       
+      @include tablet {
+        padding-top: 96px;
+      }
+      
+      @include mobile {
+        padding-top: 48px;
+        padding-bottom: 32px;
+      }
+      
       .copy-container {
         padding-right: 36px;
         padding-left: 24px;
+        float: right;
         
-        .title,
-        .heading,
-        .copy,
-        .friends-title {
+        .title {
           margin-bottom: 32px;
+          @include tablet {
+            text-align: center;
+            margin-bottom: 16px;
+          }
+          
+          @include mobile {
+            text-align: center;
+            margin-bottom: 16px;
+          }
+        }
+        
+        .heading {
+          margin-bottom: 32px;
+          
+          @include tablet {
+            text-align: center;
+          }
+          
+          @include mobile {
+            text-align: center;
+            margin-bottom: 16px;
+          }
+        }
+        
+        .copy {
+          margin-bottom: 32px;
+          
+          @include tablet {
+            margin: 0 auto;
+            text-align: center;
+            max-width: 320px;
+            margin-bottom: 24px;
+          }
+          
+          @include mobile {
+            margin: 0 auto;
+            text-align: center;
+            max-width: 461px;
+            margin-bottom: 26px;
+          }
+        }
+      
+        
+        .friends-title {
+          @include tablet {
+            text-align: center;
+            margin-bottom: 8px;
+          }
+          
+          @include mobile {
+            text-align: center;
+            margin: 0 auto 22px;
+            max-width: 320px
+          }
         }
         
         .friends-logo-container {
           width: 446px;
           
+          @include tablet {
+            width: 461px;
+            margin: 0 auto 28px;
+          }
+          
+          @include mobile {
+            max-width: 320px;
+            margin: 0 auto 28px;
+          }
+          
           .logo {
             width: 90px;
             margin-right: 24px;
+            
+            @include mobile {
+              width: auto;
+              max-width: 57px;
+              margin-right: 24px;
+            }
           }
           
           .logo:nth-of-type(4),
@@ -155,13 +464,28 @@
       
       .image-container {
         position: relative;
+        padding-left: 74px;
+        
+        @include tablet {
+          padding: 26px 0 0;
+          text-align: center;
+        }
+        
+        @include mobile {
+          padding: 26px 20px 0;
+        }
         
         .tile-image {
         
           &-map {
-            padding: 0 36px;
             width: 100%;
             max-width: 593px;
+            margin-right: 36px;
+            
+            @include tablet {
+              max-width: 528px;
+              margin: 0;
+            }
           }
         }
       }
@@ -176,35 +500,114 @@
     &-content {
       padding: 96px 19.1666% 100px;
       
+      @include tablet {
+        padding: 64px 34px 75px;
+      }
+      
+      @include mobile {
+        padding: 48px 20px 64px;
+      }
+      
       h2 {
         margin-bottom: 88px;
+        
+        @include mobile {
+          max-width: 320px;
+          text-align: center;
+          margin: 0 auto;
+          margin-bottom: 32px;
+        }
       }
       
       .help-container:not(:last-of-type) {
         margin-bottom: 192px;
+        
+        @include tablet {
+          margin-bottom: 94px;
+        }
+        
+        @include mobile {
+          margin-bottom: 64px;
+        }
       }
       
       .text-content {
+        
+        @include tablet {
+          padding-left: 58px;
+        }
         
         .help-title,
         .help-copy {
           margin-bottom: 24px;
         }
         
+        .help-title {
+          @include tablet {
+            margin-bottom: 28px;
+          }
+          
+          @include mobile {
+            max-width: 320px;
+            text-align: center;
+            margin: 0 auto 16px;
+          }
+        }
+        
+        .help-subtitle {
+          @include mobile {
+            max-width: 320px;
+            text-align: center;
+            margin: 0 auto;
+          }
+        }
+        
+        .help-copy {
+          margin-bottom: 12px;
+          
+          @include mobile {
+            max-width: 320px;
+            text-align: center;
+            margin: 0 auto 16px;
+          }
+        }
+        
         .btn {
           display: block;
+          
+          @include mobile {
+            margin: 0 auto 32px;
+          }
         }
         
         .btn:not(:last-of-type) {
           margin-bottom: 32px;
+          
+          @include tablet {
+            margin-bottom: 38px;
+          }
         }
       }
       
       .image-content {
+        
+        @include mobile {
+          text-align: center;
+        }
       
         img {
-          padding-left: 136px;
-          width: 100%;
+          float: right;
+          width: 318px;
+          
+          @include tablet {
+            width: 254px;
+          }
+          
+          @include mobile {
+            max-width: 208px;
+            margin: 0 auto;
+            float: none;
+          }
         }
       }
     }
@@ -214,6 +617,14 @@
     height: 640px;
     position: relative;
     
+    @include tablet {
+      height: 544px;
+    }
+    
+    @include mobile {
+      height: auto;
+    }
+    
     .image {
       position: absolute;
       
@@ -221,6 +632,11 @@
         width: 237px;
         bottom: -130px;
         left: -64px;
+        
+        @include tablet {
+          width: 142px;
+          left: -24px;
+        }
       }
       
       &-milk {
@@ -228,6 +644,12 @@
         bottom: -155px;
         right: 0;
         z-index: -1;
+        
+        @include tablet {
+          width: 82px;
+          right: 28px;
+          bottom: -91px;
+        }
       }
       
       &-sandwich {
@@ -237,6 +659,12 @@
         top: -196px;
         right: -156px;
         width: 332px;
+        
+        @include tablet {
+          width: 140px;
+          top: -68px;
+          right: -67px;
+        }
       }
     }
     
@@ -245,12 +673,26 @@
       &:first-of-type {
         display: flex;
         justify-content: flex-end;
+        
+        @include mobile {
+          justify-content: center;
+        }
+      }
+      
+      @include mobile {
+        justify-content: center;
       }
     }
     
     .container-half {
       max-width: 770px;
       height: 100%;
+      
+      @include mobile {
+        display: flex;
+        justify-content: center;
+        padding-bottom: 48px;
+      }
     }
     
     &-left,
@@ -259,9 +701,48 @@
       align-items: center;
       padding: 8px 126px 0 162px;
       
+      @include tablet {
+        padding: 64px 34px 0;
+        text-align: center;
+        display: block;
+      }
+      
+      @include mobile {
+        padding: 50px 20px 0;
+      }
+      
       .title, 
       .heading {
         margin-bottom: 32px;
+      }
+      
+      .title {
+        @include mobile {
+          text-align: center;
+          margin-bottom: 18px;
+        }
+      }
+      
+      .heading {
+        @include mobile {
+          text-align: center;
+          margin-bottom: 16px;
+        }
+      }
+      
+      .copy {
+        @include mobile {
+          max-width: 320px;
+          margin: 0 auto 32px;
+          text-align: center;
+        }
+      }
+      
+      .btn-container {
+        @include mobile {
+          text-align: center;
+        }
+        
       }
     }
     
@@ -271,12 +752,12 @@
       .copy {
         display: block;
         margin-bottom: 72px;
+        
+        @include mobile {
+          margin-bottom: 32px;
+        }
       }
       
-      .btn:first-of-type {
-        display: block;
-        margin-bottom: 32px;
-      }
     }
     
     &-right {

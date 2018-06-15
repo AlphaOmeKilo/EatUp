@@ -23,6 +23,44 @@
  */
 function donate() {
   
+  if(!isset($_POST['first_name']) ||
+    !isset($_POST['last_name']) ||
+    !isset($_POST['email']) ||
+    !isset($_POST['contact_no']) ||
+    !isset($_POST['address']) ||
+    !isset($_POST['suburb']) ||
+    !isset($_POST['state']) ||
+    !isset($_POST['postcode']) ||
+    !isset($_POST['card_number']) ||
+    !isset($_POST['expiry_date']) ||
+    !isset($_POST['cvv']) ||
+    !isset($_POST['donation_amount']) ||
+    !isset($_POST['monthly'])) {
+    die(json_encode(array('error' => 'You are missing some mandatory fields!')));
+  }
+  
+  $first_name = $_POST['first_name'];
+  $last_name = $_POST['last_name'];
+  $email = $_POST['email'];
+  $contact_no = $_POST['contact_no'];
+  $address = $_POST['address'];
+  $suburb = $_POST['suburb'];
+  $state = $_POST['state'];
+  $postcode = $_POST['postcode'];
+  $card_number = $_POST['card_number'];
+  $expiry_date = $_POST['expiry_date'];
+  $cvv - $_POST['cvv'];
+  $donation_amount = $_POST['donation_amount'] * 100;
+  $monthly = $_POST['monthly'];
+
+  $expiry = explode("/", $expiry_date);
+  $expiry_month = (int)$expiry[0];
+  $expiry_year = "20" . $expiry[1];
+  
+  if(isset($_POST['checkbox']) && $_POST['checkbox'] == 1) {
+    add_to_mailing_list($email);
+  }
+
   try {
      
     //START CREATE TOKEN
@@ -30,74 +68,81 @@ function donate() {
 
       $tokenResponse = \Stripe\Token::create(array(
                           "card" => array(
-                            "number" => "4242424242424243",
-                            "exp_month" => 6,
-                            "exp_year" => 2019,
-                            "cvc" => 123
+                            "number" => $card_number,
+                            "exp_month" => $expiry_month,
+                            "exp_year" => (int)$expiry_year,
+                            "cvc" => $cvv,
+                            "address_line1" => $address,
+                            "address_state" => $state,
+                            "address_zip" => $postcode
                           )
                         ));
+    
 
       $token = $tokenResponse['id'];
     //END CREATE TOKEN
     
-//    //START CHARGE
-//      $chargeResponse = \Stripe\Charge::create(array(
-//                          "amount" => 2000,
-//                          "currency" => "aud",
-//                          "source" => $token, // obtained with Stripe.js
-//                          "description" => "Charge for alex.okeeffe@example.com"
-//                        ));
-//    
-//    
-//      $charge = $chargeResponse['id'];
-//    
-//      echo $charge;
-//    //END CHARGE
-    
-    //START CREATE CUSTOMER
-      $customerResponse = \Stripe\Customer::create(array(
-                            "description" => "Customer for alex.okeeffe@example.com",
-                            "source" => $token
+    if ($monthly == 0) { // THE USER WANTS TO PERFORM A ONE TIME PAYMENT
+      //START CHARGE
+        $chargeResponse = \Stripe\Charge::create(array(
+                            "amount" => $donation_amount,
+                            "currency" => "aud",
+                            "source" => $token, 
+                            "description" => "Charge for ".$email
                           ));
-    
-      $customer = $customerResponse['id'];
-    //END CREATE CUSTOMER
 
-    //START GET PLAN
-      $plan = "";
 
-      try {
-        $getPlanResponse = \Stripe\Plan::retrieve("20");
-        $plan = $getPlanResponse['id'];
-      } catch (Exception $e) { //If plan does not exist, create it.
-        $createPlanResponse = \Stripe\Plan::create(array(
-                                "amount" => 2000,
-                                "interval" => "month",
-                                "product" => array(
-                                  "name" => "20 Monthly Subscription"
-                                ),
-                                "currency" => "aud",
-                                "id" => "20"
-                              ));
+        $charge = $chargeResponse['id'];
+      
+        echo json_encode(array('success' => "Thank you! Your donation was successful!\r\r Your reference number is: " . $charge));
 
-        $plan = $createPlanResponse['id'];
-      }
-    //END GET PLAN
-    
-    //START ADD CUSTOMER TO PLAN
-      $subscriptionResponse = \Stripe\Subscription::create(array(
-                                "customer" => $customer,
-                                "items" => array(
-                                  array(
-                                    "plan" => $plan,
+      //END CHARGE
+    } else { // THE USER WOULD LIKE TO SET UP A MONTHLY SUBSCRIPTION
+      //START CREATE CUSTOMER
+        $customerResponse = \Stripe\Customer::create(array(
+                              "description" => "Customer for ".$email,
+                              "source" => $token
+                            ));
+
+        $customer = $customerResponse['id'];
+      //END CREATE CUSTOMER
+      
+      //START GET PLAN
+        $plan = "";
+
+        try {
+          $getPlanResponse = \Stripe\Plan::retrieve($donation_amount/100);
+          $plan = $getPlanResponse['id'];
+        } catch (Exception $e) { //If plan does not exist, create it.
+          $createPlanResponse = \Stripe\Plan::create(array(
+                                  "amount" => $donation_amount,
+                                  "interval" => "month",
+                                  "product" => array(
+                                    "name" => $donation_amount/100 ." Monthly Subscription"
                                   ),
-                                )
-                              ));
-    
-      $subscription = $subscriptionResponse['id'];
-    //END ADD CUSTOMER TO PLAN
-    
-      echo $subscription;
+                                  "currency" => "aud",
+                                  "id" => $donation_amount/100
+                                ));
+
+          $plan = $createPlanResponse['id'];
+        }
+      //END GET PLAN
+      
+      //START ADD CUSTOMER TO PLAN
+        $subscriptionResponse = \Stripe\Subscription::create(array(
+                                  "customer" => $customer,
+                                  "items" => array(
+                                    array(
+                                      "plan" => $plan,
+                                    ),
+                                  )
+                                ));
+
+        $subscription = $subscriptionResponse['id'];
+      //END ADD CUSTOMER TO PLAN
+      
+      echo json_encode(array('success' => "Thank you! Your monthly donation of $" . $donation_amount/100 . " was successful\r\r Your reference number is: " .$subscription));
+    }
     
   } catch(\Stripe\Error\Card $e) {
     // Since it's a decline, \Stripe\Error\Card will be caught
@@ -106,12 +151,6 @@ function donate() {
     
     die(json_encode(array('error' => $err['message'])));
 
-//    print('Status is:' . $e->getHttpStatus() . "\n");
-//    print('Type is:' . $err['type'] . "\n");
-//    print('Code is:' . $err['code'] . "\n");
-//    // param is '' in this case
-//    print('Param is:' . $err['param'] . "\n");
-//    print('Message is:' . $err['message'] . "\n");
   } catch (\Stripe\Error\RateLimit $e) {
     // Too many requests made to the API too quickly
   } catch (\Stripe\Error\InvalidRequest $e) {
@@ -130,15 +169,6 @@ function donate() {
   
   return;
   die();
-  
-//  \Stripe\Subscription::create(array(
-//    "customer" => "cus_D2eIVMTdfNgOtB",
-//    "items" => array(
-//      array(
-//        "plan" => "gold",
-//      ),
-//    )
-//  ));
   
 }
 
