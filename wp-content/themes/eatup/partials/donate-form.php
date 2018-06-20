@@ -17,21 +17,21 @@
       </div>      
     </div>
     
-    <div class="switch-field col-sm-12">
-      <div class="switch-field-monthly">
+    <div class="switch-field col-sm-12 flex-start">
+      <div class="switch-field-monthly col-xs-12">
         <input type="radio" id="donate-once" name="monthly" value="0" checked/>
         <label for="donate-once" class="b1 monthly-label">One time only</label>
       </div>
-      <div class="switch-field-monthly">
+      <div class="switch-field-monthly col-xs-12">
         <div class="b1 white switch-field-divider">or</div>
       </div>
-      <div class="switch-field-monthly">
+      <div class="switch-field-monthly col-xs-12">
         <input type="radio" id="donate-subscription" name="monthly" value="1" />
         <label for="donate-subscription" class="b1 monthly-label">Monthly donation</label>
       </div>
     </div>
     
-    <b4 class="b4 white section-label section-label-value">You’re donating $<span id="donation-amount">1</span>, which is the equivalent of <span id="donation-sandwiches">0</span> sandwiches!</b4>
+    <b4 class="b4 white section-label section-label-value">You’re donating $<span id="donation-amount">1</span>, which is the equivalent of <span id="donation-lunches">0</span> lunches!</b4>
     
     <b4 class="b4 white section-label">Contact Details</b4>
 

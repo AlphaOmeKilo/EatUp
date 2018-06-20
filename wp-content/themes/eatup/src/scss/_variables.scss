@@ -43,6 +43,12 @@ $tablet-width : 1024px;
   }
 }
 
+@mixin tablet-and-desktop {
+  @media screen and (min-width: $tablet-width) {
+    @content;
+  }
+}
+
 @mixin sm-desktop {
   @media screen and (min-width: $tablet-width) and (max-width: $screen-md) {
     @content;

@@ -71,6 +71,7 @@ eu.form.init = function() {
   function calculateDonation() {
     var selValue = $('input[name=donation_amount]:checked').val(); 
     $('#donation-amount').text(selValue);
+    $('#donation-lunches').text(selValue);
   }
   
   $('.switch-field-choices input').on('click', function() {

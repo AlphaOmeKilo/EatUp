@@ -6,14 +6,39 @@
     &-content {
       padding: 96px 48px 64px;
       
+      @include tablet {
+        padding: 160px 34px 174px;
+      }
+      
+      @include mobile {
+        padding: 100px 20px 0;
+      }
+      
       .title,
       .subtitle {
         padding-left: 114px;
+        
+        @include tablet {
+          padding-left: 0;
+        }
+        
+        @include mobile {
+          padding-left: 0;
+        }
       }
       
       .title {
         margin-bottom: 32px;
         margin-top: 128px;
+        
+        @include tablet {
+          margin-top: 0;
+        }
+        
+        @include mobile {
+          margin-top: 0;
+          margin-bottom: 24px;
+        }
       }
       
       .subtitle {
@@ -21,12 +46,26 @@
           color: $grey;
           text-decoration: underline;
         }
+        
+        @include mobile {
+          max-width: 320px;
+        }
       }
       
       .image {
         padding: 113px 65px 71px 18px;
         width: 100%;
         max-width: 463px;
+        
+        @include tablet {
+          padding: 24px 16px 9px 36px;
+        }
+        
+        @include mobile {
+          max-width: 185px;
+          float: right;
+          padding: 0;
+        }
       }
     }
   }
@@ -37,8 +76,30 @@
     &-content {
       padding: 128px 48px 96px;
       
+      @include tablet {
+        padding: 64px 94px 76px;
+      }
+      
+      @include mobile {
+        padding: 32px 20px 90px;
+      }
+      
       .title {
         padding-left: 114px;
+        
+        @include tablet {
+          padding-left: 0;
+          width: 580px;
+          margin: 0 auto;
+          text-align: center;
+        }
+        
+        @include mobile {
+          padding-left: 0;
+          max-width: 320px;
+          margin: 0 auto;
+          text-align: center;
+        }
       }
       
       .video {
@@ -56,8 +117,30 @@
     &-content {
       padding: 32px 48px;
       
+      @include tablet {
+        padding: 0 94px;
+      }
+      
+      @include mobile {
+        padding: 0 20px;
+      }
+      
       .title {
         padding: 160px 64px 176px 114px;
+        
+        @include tablet {
+          padding: 0 0 64px 0;
+          width: 580px;
+          margin: 0 auto;
+          text-align: center;
+        }
+        
+         @include mobile {
+          padding: 0 0 32px 0;
+          max-width: 320px;
+          margin: 0 auto;
+          text-align: center;
+        }
       }
       
       .video {
@@ -71,18 +154,44 @@
     .sponsors {
       padding: 192px 114px 192px 24px;
       
+      @include tablet {
+        padding: 0 94px 76px;
+      }
+      
+      @include mobile {
+        padding: 0 20px 0;
+      }
+      
       .instruction {
         max-width: 342px;
         margin: 0 auto 12px;
         text-align: center;
+        
+        @include tablet {
+          margin-bottom: 24px;
+        }
+        
+        @include mobile {
+          margin-bottom: 24px;
+        }
       }
       
       &-logos {
+        @include mobile {
+          margin-bottom: 48px;
+        }
         
         
         .sponsor {
           height: 64px;
           margin-bottom: 12px;
+          
+          @include mobile {
+            padding-left: 38px;
+            padding-right: 38px;
+            margin-top: 32px;
+            margin-bottom: 32px;
+          }
         }
         
         .sponsor:not(:nth-of-type(4)),
@@ -99,13 +208,57 @@
     &-content {
       padding: 32px 48px;
       
+      @include tablet {
+        padding: 64px 94px 68px;
+      }
+      
+      @include mobile {
+        padding: 32px 20px 32px;
+      }
+      
       .title {
         padding: 192px 64px 192px 114px;
+        
+        @include tablet {
+          padding: 0;
+          text-align: center;
+          max-width: 580px;
+          margin: 0 auto;
+        }
+        
+        @include mobile {
+          padding: 0;
+          text-align: center;
+          max-width: 320px;
+          margin: 0 auto;
+        }
       }
       
       .image {
         padding: 130px 180px 130px 90px;
         width: 100%;
+        
+        @include tablet {
+          width: 316px;
+          padding: 0;
+        }
+        
+        @include mobile {
+          width: 208px;
+          padding: 0;
+        }
+        
+        &-container {
+          @include tablet {
+            text-align: center;
+            padding-top: 48px;
+          }
+          
+          @include mobile {
+            text-align: center;
+            padding-top: 48px;
+          }
+        }
       }
     }
     
@@ -116,10 +269,26 @@
         padding: 64px 0;
         position: relative;
         
+        @include tablet {
+          padding: 64px 0 32px;
+        }
+        
+        @include mobile {
+          padding: 32px 20px;
+        }
+        
         .title {
           width: 660px;
           margin: 0 auto;
           text-align: center;
+          
+          @include tablet {
+            width: 580px;
+          }
+          
+          @include mobile {
+            width: auto;
+          }
         }
         
         .image {
@@ -130,6 +299,13 @@
             height: 237px;
             bottom: -120px;
             right: 34px;
+            
+            @include tablet {
+              width: 124px;
+              height: 157px;
+              bottom: -62px;
+              right: 24px;
+            }
           }
           
           &-juice {
@@ -137,6 +313,12 @@
             left: 31px;
             width: 187px;
             height: 276px;
+            
+            @include tablet {
+              width: 117px;
+              height: 174px;
+              top: -100px;
+            }
           }
         }
       }
@@ -149,20 +331,56 @@
     &-content {
       padding: 32px 48px;
       
+      @include tablet {
+        padding: 0 34px;
+      }
+      
+      @include mobile {
+        padding: 32px 20px;
+      }
+      
       .step {
         height: 640px;
+        
+        @include tablet {
+          height: 416px;
+        }
+        
+        @include mobile {
+          height: auto;
+        }
       }
       
       .step:nth-child(odd) {
         .step-text {
           float: right;
           padding-left: 138px;
+          
+          @include tablet {
+            padding-left: 0;
+          }
+          
+          @include mobile {
+            padding-left: 0;
+            text-align: center;
+            margin-bottom: 48px;
+          }
         }   
       }
       
       .step:nth-child(even) {
         .step-text {
           padding-left: 228px;
+          
+          @include tablet {
+            padding-left: 0;
+          }
+          
+          @include mobile {
+            padding-left: 0;
+            text-align: center;
+            margin-bottom: 48px;
+          }
         }   
       }
       
@@ -176,11 +394,31 @@
       
       .step:last-of-type {
         
+        .step-text {
+          @include mobile {
+            margin-bottom: 0;
+          }
+        }
+        
         .step-image {
+          
+          @include mobile {
+            margin-bottom: 0;
+          }
+          
           .image {
             position: absolute;
             bottom: -32px;
             right: 0;
+            
+            @include tablet {
+              width: 325px;
+              bottom: 0;
+            }
+            
+            @include mobile {
+              position: relative;
+            }
           }
         }
       }
@@ -194,6 +432,10 @@
         .image {
           width: 75%;
         }
+        
+        @include mobile {
+          margin-bottom: 64px;
+        }
       }
       
       .step-text {
@@ -205,10 +447,19 @@
           
           .title {
             margin-bottom: 24px;
+            
+            @include mobile {
+              margin-bottom: 16px;
+            }
           }
           
           .copy {
             max-width: 432px;
+            
+            @include mobile {
+              max-width: 320px;
+              margin: 0 auto;
+            }
           }
         }
       }
@@ -223,21 +474,56 @@
     &-content {
       height: 640px;
       
+      @include tablet {
+        height: 448px;
+      }
+      
+      @include mobile {
+        height: auto;
+      }
+      
       .text {
         display: flex;
         align-items: center;
         height: 100%;
         padding-left: 162px;
         
+        @include tablet {
+          padding-left: 34px;
+        }
+        
+        @include mobile {
+          padding-left: 20px;
+          padding-top: 32px;
+          display: block;
+        }
+        
         &-content {
           max-width: 432px;
           
+          @include mobile {
+            padding-bottom: 56px;
+            max-width: 320px;
+          }
+          
           .title {
             margin-bottom: 32px;
+            
+            @include mobile {
+              margin-bottom: 16px;
+            }
           }
           
           .copy {
             margin-bottom: 64px;
+            
+            @include tablet {
+              margin-bottom: 32px;
+            }
+            
+            @include mobile {
+              margin-bottom: 32px;
+            }
           }
           
         }
@@ -251,13 +537,44 @@
     &-content {
       padding: 96px 0 94px 162px;
       
+      @include tablet {
+        padding: 40px 34px 61px;
+      }
+      
+      @include mobile {
+        padding: 32px 20px 48px;
+      }
+      
       .title,
       .copy {
         margin-bottom: 40px;
       }
       
+      .title {
+        @include tablet {
+          margin-bottom: 24px;
+        }
+               
+        @include mobile {
+          margin-bottom: 16px;
+        }
+      }
+      
+      .copy {
+        margin-bottom: 36px;
+        
+        @include mobile {
+          margin-bottom: 16px;
+        }
+      }
+      
       .contact {
         display: flex;
+        
+        @include mobile {
+          display: block;
+          
+        }
         
         a {
           display: flex;
@@ -267,11 +584,19 @@
         &-icon {
           margin-right: 12px;
           float: left;
+          
+          @include mobile {
+            margin-bottom: 16px;
+          }
         }
 
         .phone {
           margin-right: 48px;
           float: left;
+          
+          @include mobile {
+            margin-bottom: 16px;
+          }
         }
 
         .email {

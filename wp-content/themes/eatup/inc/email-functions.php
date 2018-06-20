@@ -83,7 +83,7 @@ function signup_a_school() {
   $postcode = $_POST["postcode"];
   $message = $_POST["message"];
   
-  $email_to = "alexwokeeffe@gmail.com";
+  $email_to = "hello@loveandmoney.agency";
   $email_subject = "School Signup";
   
   $email_message = "Contact Details:\n\n";
@@ -137,7 +137,7 @@ function help_us_out() {
     add_to_mailing_list($email);
   }
   
-  $email_to = "alexwokeeffe@gmail.com";
+  $email_to = "hello@loveandmoney.agency";
   $email_subject = "Help us out - Enquiry";
   
   $email_message = "";
@@ -181,7 +181,7 @@ function lets_talk_contact() {
     add_to_mailing_list($email);
   }
   
-  $email_to = "eatup@eatup.org.au";
+  $email_to = "hello@loveandmoney.agency";
   $email_subject = "Let's Talk - Enquiry";
   
   $email_message = "";

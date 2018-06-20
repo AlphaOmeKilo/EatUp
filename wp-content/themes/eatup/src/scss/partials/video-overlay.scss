@@ -28,49 +28,123 @@
     .video-container {
       position: relative;
       
-      iframe {
-        width: 320px;
-        height: 150px;
+      @include desktop {
+        width: 75%;
+      }
+      
+      @include tablet {
+        width: calc(100% - 68px);
+      }
+      
+      @include mobile {
+        width: calc(100% - 40px);
+      }
+      
+      video {
+        width: 100%;
         position: relative;
+      }
+      
+      .progress-bar {
+        position: absolute;
+        bottom: -26px;
+        left: 0;
+        right: 0;
+        height: 32px;
+        z-index: 300;
+        padding-left: 32px;
+        padding-right: 32px;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        
         @include tablet {
+          height: 25px;
+          bottom: -25px;
+          padding-left: 24px;
+          padding-right: 24px;
+        }
+        
+        @include mobile {
+          height: 19px;
+          bottom: -12px;
+          padding-left: 11px;
+          padding-right: 11px;
+        }
+        
+        .progress-backer {
+          width: calc(100% - 64px);
+          position: absolute;
+          top: 12px;
+          margin-left: 32px;
+          left: 0;
+          height: 8px;
           
-          width: 672px;
-          height: 315px;
+          @include tablet {
+            width: calc(100% - 48px);
+            margin-left: 24px;
+            height: 6px;
+            top: 9.5px;
+          }
+          
+          @include mobile {
+            width: calc(100% - 22px);
+            margin-left: 11px;
+            height: 6px;
+            top: 6.5px;
+          }
         }
         
-        @include desktop {
-          width: 960px;
-          height: 450px;
+        .progress-value {
+          position: relative;
+          z-index: 100;
+          width: 0;
+          height: 8px;
+          
+          @include tablet {
+            height: 6px;
+          }
+          
+          @include mobile {
+            height: 6px;
+          }
         }
-        
       }
 
       .close {
         position: absolute;
         top: 0;
-        right: 0;
+        right: 0px;
         height: 40px;
         width: 40px;
         z-index: 300;
         cursor: pointer;
+        
+        @include tablet {
+          width: 32px;
+          height: 32px;
+        }
         
         div {
           position: absolute;
           height: 18px;
           width: 2px;
           background-color: $white;
+          top: 11px;
+          left: 20px;
+          
+          @include tablet {
+            top: 8px;
+            left: 16px;
+          }
         }
         
         div:first-of-type {
           transform: rotate(45deg);
-          top: 11px;
-          left: 20px;
         }
         
         div:last-of-type {
           transform: rotate(-45deg);
-          top: 11px;
-          left: 20px;
         }
       }
     }

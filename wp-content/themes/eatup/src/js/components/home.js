@@ -50,7 +50,7 @@ eu.home.init = function() {
     if (!isDesktop()) {
       $fanPhotos();
     } else {
-      if ($('#interactive-photos').visible()) {
+      if ($('.home-what-do-you-do-content .copy-container .heading').visible()) {
         $fanPhotos();
       } else {
         $collectPhotos();
@@ -61,23 +61,48 @@ eu.home.init = function() {
   
   
   //Play video on click
-  
-  $originalVideoSource = $('iframe').attr('src');
-  
   $('#watch-vid-btn').on('click tap', function(e) {
     e.preventDefault();
-    $('iframe').attr('src', $originalVideoSource);
+    $('video').get(0).play();
     $('.video-overlay').addClass('active');
+    
+    $duration = $('video').get(0).duration;
+    
+    $updateVideoProgress = setInterval(function() {
+      $currentTime = $('video').get(0).currentTime;
+      $progress =  ($currentTime / $duration) * 100;
+      $('.progress-value').width($progress + "%");
+      
+      if ($progress == 100) {
+        clearInterval($updateVideoProgress);
+      }
+    },200);
+    
   });
   
   $('.video-overlay .close').on('click tap', function(e) {
     e.preventDefault();
     
     $('.video-overlay').removeClass('active');
-    $('iframe').attr('src',"");
-  })
+    $('video').get(0).pause();
+    clearInterval($updateVideoProgress);
+    
+    if($('video').get(0).currentTime == 100) {
+      $('video').get(0).currentTime(0);
+    }
+  });
   
-  
+  $('.progress-bar').on('click tap', function(e) {
+    offset = $(this).offset();
+    relativeX = (e.pageX - offset.left);
+    
+    duration = $('video').get(0).duration;
+    
+    jumpToTime = (relativeX / $('.progress-bar').width()) * 100;
+    $('video').get(0).currentTime = (duration / 100) * jumpToTime -6 ;
+    clearInterval($updateVideoProgress);
+    $('#watch-vid-btn').click();
+  });
 }
 
 jQuery.fn.reverse = [].reverse;

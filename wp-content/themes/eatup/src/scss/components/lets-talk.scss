@@ -125,7 +125,7 @@
     
     
     .form-container {
-      padding: 36px 20px 80px;
+      padding: 36px 20px 0px;
       
       @include tablet {
         padding: 32px 4% 68px;
@@ -149,5 +149,17 @@
     top: -58px;
     left: 48px;
     width: 318px;
+    
+    @include tablet {
+      width: 208px;
+      top: -80px;
+      left: 30px;
+    }
+    
+    @include mobile {
+      width: 180px;
+      top: 0;
+      left: calc(50% - 90px);
+    }
   }
 }

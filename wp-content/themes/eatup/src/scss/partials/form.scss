@@ -104,6 +104,14 @@
     align-items: center;
     justify-content: center;
     
+    &.flex-start {
+      justify-content: flex-start;
+      
+      @include mobile {
+        display: block;
+      }
+    }
+    
     input[type="radio"] {
       position: absolute;
       clip: rect(0, 0, 0, 0);
@@ -136,6 +144,19 @@
     &-monthly {
       margin: 0 auto;
       
+      @include mobile {
+        display: flex;
+        justify-content: center;
+      }
+      
+      @include desktop {
+        width: auto;
+      }
+      
+      @include tablet {
+        width: auto;
+      }
+      
       &:first-of-type {
         margin-left: 0;
       }
@@ -162,9 +183,16 @@
       margin-right: 24px;
     }
     
+    .monthly-label {
+      @include mobile {
+        width: 100%;
+      }
+    }
+    
     label {
       float: left;
       margin: 0 auto 24px;
+      white-space: nowrap;
       
       &:first-of-type {
         margin-left: 0;
@@ -296,7 +324,7 @@
     
     @include mobile {
       flex-wrap: wrap;
-      padding-bottom: 88px;
+      padding-bottom: 80px;
       
       .signup-a-school & { 
         padding-bottom: 0;
@@ -339,7 +367,6 @@
       
       @include mobile {
         position: relative;
-        margin: 0 auto;
       }
       
       .signup-a-school & {

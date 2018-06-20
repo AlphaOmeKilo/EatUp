@@ -30,6 +30,12 @@
           padding-right: 20px;
         }
         
+        .heading {
+          @include mobile {
+            max-width: 320px;
+          }
+        }
+        
         .heading,
         .sub-heading {
           margin-bottom: 32px;
@@ -86,9 +92,9 @@
             @include mobile {
               position: absolute;
               height: 379px;
-              bottom: 12px;
+              bottom: -37px;
               top: auto;
-              right: -216px;
+              right: -183px;
               z-index: 1;
             }
           }

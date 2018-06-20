@@ -13,9 +13,24 @@ get_header() ?>
   <div class="video-overlay video-overlay-background"></div>
   <div class="video-overlay video-overlay-foreground">
     <div class="video-container">
-      <iframe src="http://www.metacdn.com/r/v/wajzusep/FLpA0GlB/embed" frameborder="0" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen autoplay="false">
-      </iframe>
+        
+        
+      <video preload="auto" poster="" id="video-container_html5_api" class="vjs-tech" tabindex="-1" src="https://cdn-1.metacdn.net/wajzusep/JlboPLln/55248_44771_mp4-MEDIUM-MP4.mp4">
+      <source src="https://cdn-1.metacdn.net/wajzusep/JlTVrWzt/55248_44771_mp4-MOBILE-MP4.mp4" type="video/mp4" data-res="MOBILE" label="240p">
+      <source src="https://cdn-1.metacdn.net/wajzusep/JloH75Sv/55248_44771_mp4-MOBILE-WEBM.webm" type="video/webm" data-res="MOBILE" label="240p">        
+      <source src="https://cdn-1.metacdn.net/wajzusep/JlboPLln/55248_44771_mp4-MEDIUM-MP4.mp4" type="video/mp4" data-res="MEDIUM" label="480p">
+      <source src="https://cdn-1.metacdn.net/wajzusep/JlddqDe8/55248_44771_mp4-MEDIUM-WEBM.webm" type="video/webm" data-res="MEDIUM" label="480p">        
+      <source src="https://cdn-1.metacdn.net/wajzusep/JlVctioj/55248_44771_mp4-HIGH-WEBM.webm" type="video/webm" data-res="HIGH" label="720p">        
+      <source src="https://cdn-1.metacdn.net/wajzusep/JjQsQWwl/55248_44771_mp4-HIGH-MP4.mp4" type="video/mp4" data-res="HIGH" label="720p">
+      <source src="https://cdn-1.metacdn.net/wajzusep/JlcGAKIH/55248_44771_mp4-XHIGH-MP4.mp4" type="video/mp4" data-res="XHIGH" label="1080p">
+      <source src="https://cdn-1.metacdn.net/wajzusep/JljeHqEX/55248_44771_mp4-XHIGH-WEBM.webm" type="video/webm" data-res="XHIGH" label="1080p">       
+      </video>
+      
       <div class="close bg-deep-green"><div></div><div></div></div>
+      <div class="progress-bar bg-deep-green">
+        <div class="progress-value bg-white"></div>
+        <div class="progress-backer bg-light-green"></div>
+      </div>
     </div>
   </div>
   
@@ -28,7 +43,7 @@ get_header() ?>
         <div id="watch-vid-btn" class="btn btn-deep-green">Watch video</div>
       </div>
       <div class="col-md-5 col-md-push-2 col-sm-5 image-container">
-        <img src="<?php eu_include('img/home/pink-carrots.png') ?>" class="tile-image tile-image-carrots">
+        <img src="<?php eu_include('img/home/lunchbag-sandwich.png') ?>" class="tile-image tile-image-carrots">
       </div>
     </div>
     <div class="cloud-statistics">
@@ -119,7 +134,7 @@ get_header() ?>
     </div>
   </div>
   
-  <div class="home-interact">
+  <div class="home-interact clearfix">
     <div class="col-sm-6 col-xs-12 bg-purple home-interact-content">
       <div class="home-interact-left container-half">
         <div>
@@ -128,7 +143,7 @@ get_header() ?>
           <h2 class="h2 white heading"><?php echo $left['heading']; ?></h2>
           <b2 class="b2 white copy"><?php echo $left['copy']; ?></b2>
           <div class="btn-container">
-            <a href="" class="btn btn-purple-invert">Like us on facebook</a>
+            <a href="https://www.facebook.com/eatupaus/" target="_blank" class="btn btn-purple-invert">Like us on facebook</a>
           </div>
           
         </div>
@@ -142,7 +157,7 @@ get_header() ?>
           <h2 class="h2 white heading"><?php echo $right['heading']; ?></h2>
           <b2 class="b2 white copy"><?php echo $right['copy']; ?></b2>
           <div class="btn-container">
-            <a href="" class="btn btn-red-invert">Sign up a school</a>
+            <a href="<?php eu_url('/signup-a-school'); ?>" class="btn btn-red-invert">Sign up a school</a>
           </div>
         </div>
       </div>
@@ -185,7 +200,7 @@ get_header() ?>
 
       </div>
 
-      <a href="<?php eu_url('/media'); ?>" class="see-more-home b3 black text-center">See More</a>
+      <a href="<?php eu_url('/media'); ?>" class="see-more-home b3 black text-center not-mobile">See More</a>
   </div>
   
 </div>
@@ -213,7 +228,7 @@ get_header() ?>
       </div>
     </div>
   </div>
-  <img class="banana desktop-only" src="<?php eu_include('img/home/Banana.png'); ?>" alt="banana">
+  <img class="banana " src="<?php eu_include('img/home/Banana.png'); ?>" alt="banana">
 </div>
 
 <?php get_footer() ?>
