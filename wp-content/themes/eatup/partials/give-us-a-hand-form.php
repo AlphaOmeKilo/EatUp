@@ -1,11 +1,11 @@
 <form id="contact-form" class="contact-form">
   <input name="action" type="hidden" value="help_us_out" id="form-action">
   
-  <div class="radio-group">
-    <div class="col-sm-3 col-xs-4 col-xs-push-1">
+  <div class="radio-group clearfix">
+    <div class="col-sm-3 col-xs-4 col-xs-push-1 col-sm-push-2 col-md-push-0">
       <b1 class="b1 white you-are">You are a :</b1>
     </div>
-    <div class="col-sm-9 col-xs-7 col-xs-push-1 radio-group-choices">
+    <div class="col-sm-9 col-xs-7 col-xs-push-1 col-sm-push-2 col-md-push-0 radio-group-choices">
       <div class="radio-container">
         <input type="radio" class="radio" name="help-type" value="single volunteer" id="opt-a">
         <label for="opt-a" class="b1 white radio-text">Single volunteer</label>
@@ -31,12 +31,14 @@
   <label for="#contact-message" class="b1 white message-label">Your Message</label>
   <textarea id="contact-message" class="b1 white" name="message" rows="8" cols="80" placeholder="" required></textarea>
   
-  <div class="col-sm-12 form-footer">
-    <div class="newsletter col-sm-8 col-xs-12">
-      <b2 class="b2 white newsletter-text">I agree to receiving a newsletter from Eat Up</b2>
+  <div class="form-footer">
+    <div class="newsletter">
+      <label for="checkBox" class="b2 white newsletter-text">I agree to receiving a newsletter from Eat Up</label>
       <input id="checkBox" type="checkbox" name="checkbox" value="1" class="newsletter-checkbox">
     </div>
-    <input class="btn btn-pink-invert col-sm-4" type="submit" value="Submit">
+    <div class="btn-container">
+      <input class="btn btn-pink-invert col-sm-3" type="submit" value="Submit">
+    </div>
   </div>
   
 </form>

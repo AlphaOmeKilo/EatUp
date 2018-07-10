@@ -9,11 +9,11 @@
       <div class="switch-field-choices col-md-7 col-sm-8">
         <input type="radio" id="donation_amount_left" name="donation_amount" value="1"/>
         <label for="donation_amount_left" id="donation_amount_left_label" class="b1">$1</label>
-        <input type="radio" id="donation_amount_center" name="donation_amount" value="10" />
+        <input type="radio" id="donation_amount_center" name="donation_amount" value="10" checked/>
         <label for="donation_amount_center" id="donation_amount_center_label" class="b1">$10</label>
         <input type="radio" id="donation_amount_right" name="donation_amount" value="0"/>
         <label for="donation_amount_right" class="b1 othervalue-label active">Other</label>
-        <input class="othervalue-text b1" type="text" placeholder=""/>
+        <input class="othervalue-text b1" type="text" placeholder="" value="$"/>
       </div>      
     </div>
     
@@ -31,7 +31,7 @@
       </div>
     </div>
     
-    <b4 class="b4 white section-label section-label-value">You’re donating $<span id="donation-amount">1</span>, which is the equivalent of <span id="donation-lunches">0</span> lunches!</b4>
+    <b4 class="b4 white section-label section-label-value">You’re donating <span id="donation-amount">1</span>, which is the equivalent of <span id="donation-lunches">0</span> lunches!</b4>
     
     <b4 class="b4 white section-label">Contact Details</b4>
 
@@ -54,12 +54,14 @@
     <input id="cvv" class="contact-form-field b1 white col-sm-5 col-sm-push-2 col-xs-12" name="cvv" value="" placeholder="CVV" required>
   </div>
   
-  <div class="col-sm-12 form-footer">
-    <div class="newsletter col-sm-8 col-xs-12">
-      <b2 class="b2 white newsletter-text">I agree to receiving a newsletter from Eat Up</b2>
+  <div class="form-footer">
+    <div class="newsletter">
+      <label for="checkBox" class="b2 white newsletter-text">I agree to receiving a newsletter from Eat Up</label>
       <input id="checkBox" type="checkbox" name="checkbox" value="1" class="newsletter-checkbox">
     </div>
-    <input class="btn btn-deep-green-invert col-sm-3" type="submit" value="Submit">
+    <div class="btn-container">
+      <input class="btn btn-deep-green-invert col-sm-3" type="submit" value="Submit">
+    </div>
   </div>
   
 </form>

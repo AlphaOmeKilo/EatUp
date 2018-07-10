@@ -13,7 +13,6 @@ get_header() ?>
     <div class="give-us-a-hand-intro-content container">
       <div class="col-sm-7">
         <h1 class="h1 grey title"><?php echo the_field('intro_title'); ?></h1>
-        <b1 class="b1 grey subtitle"><?php echo the_field('intro_subtitle'); ?> <a href="<?php eu_url('/give-us-a-hand-form'); ?>">click here</a>.</b1>
       </div>
       <div class="col-sm-5">
         <img class="image" src="<?php eu_include('img/give-us-a-hand/full-sandwich.png'); ?>">
@@ -21,18 +20,48 @@ get_header() ?>
     </div>
   </div>
   
-  <div class="give-us-a-hand-founder bg-purple">
+  <div class="give-us-a-hand-helpers bg-white">
+    <div class="give-us-a-hand-helpers-content container">
+      <div class="col-sm-6 col-xs-12 regional">
+        <h3 class="h3 deep-green title">Regional Helpers</h3>
+        <b2 class="b2 deep-green subtitle">Scroll down this page for more information on how you can help.</b2>
+        <a href="#founder" class="btn btn-deep-green">Scroll down</a>
+      </div>
+      <div class="col-sm-6 col-sm-push-1 col-xs-12 metro">
+        <h3 class="h3 deep-green title">Metro Helpers</h3>
+        <b2 class="b2 deep-green subtitle">Melbourne Metro helpers please following the link to signup for our sessions.</b2>
+        <a href="<?php eu_url('/give-us-a-hand-form'); ?>" class="btn btn-deep-green">Give us a hand</a>
+      </div>
+    </div>
+  </div>
+  
+<!--
+  <div id="founder" class="give-us-a-hand-founder bg-purple">
     <div class="give-us-a-hand-founder-content container">
       <div class="col-md-6 col-xs-12">
         <h2 class="h2 grey title"><?php echo the_field('founder_title'); ?></h2>
       </div>
       <div class="col-md-6 col-xs-12">
         <div class="video-container">
-          <div class="video"></div>
+          <video class="video" loop webkit-playsinline="true" playsinline="true">
+            <source src="https://player.vimeo.com/external/238482593.hd.mp4?s=d883a100eb9ef48cbd7dea8623b647332c250e50&profile_id=174" type="video/mp4">
+          </video>
+          <video preload="auto" poster="" id="video-container_html5_api" class="vjs-tech video" tabindex="-1" src="https://cdn-1.metacdn.net/wajzusep/JlboPLln/55248_44771_mp4-MEDIUM-MP4.mp4">
+      <source src="https://cdn-1.metacdn.net/wajzusep/JlTVrWzt/55248_44771_mp4-MOBILE-MP4.mp4" type="video/mp4" data-res="MOBILE" label="240p">
+      <source src="https://cdn-1.metacdn.net/wajzusep/JloH75Sv/55248_44771_mp4-MOBILE-WEBM.webm" type="video/webm" data-res="MOBILE" label="240p">        
+      <source src="https://cdn-1.metacdn.net/wajzusep/JlboPLln/55248_44771_mp4-MEDIUM-MP4.mp4" type="video/mp4" data-res="MEDIUM" label="480p">
+      <source src="https://cdn-1.metacdn.net/wajzusep/JlddqDe8/55248_44771_mp4-MEDIUM-WEBM.webm" type="video/webm" data-res="MEDIUM" label="480p">        
+      <source src="https://cdn-1.metacdn.net/wajzusep/JlVctioj/55248_44771_mp4-HIGH-WEBM.webm" type="video/webm" data-res="HIGH" label="720p">        
+      <source src="https://cdn-1.metacdn.net/wajzusep/JjQsQWwl/55248_44771_mp4-HIGH-MP4.mp4" type="video/mp4" data-res="HIGH" label="720p">
+      <source src="https://cdn-1.metacdn.net/wajzusep/JlcGAKIH/55248_44771_mp4-XHIGH-MP4.mp4" type="video/mp4" data-res="XHIGH" label="1080p">
+      <source src="https://cdn-1.metacdn.net/wajzusep/JljeHqEX/55248_44771_mp4-XHIGH-WEBM.webm" type="video/webm" data-res="XHIGH" label="1080p">       
+      </video>
+          <div class="play active"></div>
         </div>
       </div>
     </div>
   </div>
+-->
   
   <div class="give-us-a-hand-serving bg-purple">
     <div class="give-us-a-hand-serving-content container">
@@ -41,11 +70,10 @@ get_header() ?>
       </div>
       <div class="col-md-5 col-xs-12">
         <div class="sponsors clearfix">
-          <b3 class="b3 grey instruction"><?php echo the_field('serving_hover_instruction'); ?></b3>
           <div class="sponsors-logos col-xs-12">
             <?php $sponsors = get_field('serving_sponsors'); ?>
             <?php foreach($sponsors as $sponsor): ?>
-              <img class="sponsor col-sm-3 col-xs-6" src="<?php echo $sponsor['url']; ?>" alt="sponsor">
+              <img class="sponsor" src="<?php echo $sponsor['url']; ?>" alt="sponsor">
             <?php endforeach; ?>
           </div>
         </div>
@@ -104,7 +132,7 @@ get_header() ?>
     </div>
   </div>
   
-  <div class="give-us-a-hand-ready" style="background-image: url('<?php echo the_field('ready_background_image'); ?>');">
+  <div class="give-us-a-hand-ready bg-pink">
     <div class="give-us-a-hand-ready-content container">
       <div class="col-sm-6 col-xs-12 text">
         <div class="text-content">

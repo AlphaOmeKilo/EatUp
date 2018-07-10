@@ -45,6 +45,88 @@
         position: relative;
       }
       
+      .video-control {
+        position: absolute;
+        bottom: -26px;
+        left: 0;
+        width: 64px;
+        height: 32px;
+        z-index: 400;
+        
+        @include tablet {
+          height: 26px;
+          bottom: -18px;
+          width: 48px;
+        }
+        
+        @include mobile {
+          display: none;
+        }
+        
+        .play {
+          display: none;
+          position: absolute;
+          top: 6px;
+          height: 18px;
+          left: 26px;
+          cursor: pointer;
+          
+          @include tablet {
+            left: 18px;
+            height: 14px;
+            top: 6px;
+          }
+          
+          div {
+            border-bottom: 10px solid transparent;
+            border-left: 18px solid $white;
+            border-right: 10px solid transparent;
+            border-top: 10px solid transparent;
+            
+            @include tablet {
+              border-bottom: 8px solid transparent;
+              border-left: 14px solid $white;
+              border-right: 8px solid transparent;
+              border-top: 8px solid transparent;
+            }
+          }
+          
+          &.active {
+            display: block;
+          }
+        }
+        
+        .pause {
+          display: none;
+          position: absolute;
+          top: 8px;
+          height: 18px;
+          left: 26px;
+          cursor: pointer;
+          
+          @include tablet {
+            left: 18px;
+            height: 14px;
+            top: 6px;
+          }
+          
+          div {
+            height: 100%;
+            width: 4px;
+            background-color: $white;
+            cursor: pointer;
+          }
+          
+          div:first-of-type {
+            margin-right: 4px;
+          }
+          
+          &.active {
+            display: flex;
+          }
+        }
+      }
+      
       .progress-bar {
         position: absolute;
         bottom: -26px;
@@ -52,16 +134,16 @@
         right: 0;
         height: 32px;
         z-index: 300;
-        padding-left: 32px;
+        margin-left: 64px;
         padding-right: 32px;
         display: flex;
         align-items: center;
         cursor: pointer;
         
         @include tablet {
-          height: 25px;
-          bottom: -25px;
-          padding-left: 24px;
+          height: 26px;
+          bottom: -18px;
+          margin-left: 48px;
           padding-right: 24px;
         }
         
@@ -70,21 +152,20 @@
           bottom: -12px;
           padding-left: 11px;
           padding-right: 11px;
+          margin-left: 0;
         }
         
         .progress-backer {
-          width: calc(100% - 64px);
+          width: calc(100% - 32px);
           position: absolute;
           top: 12px;
-          margin-left: 32px;
           left: 0;
           height: 8px;
           
           @include tablet {
-            width: calc(100% - 48px);
-            margin-left: 24px;
+            width: calc(100% - 24px);
             height: 6px;
-            top: 9.5px;
+            top: 10px;
           }
           
           @include mobile {

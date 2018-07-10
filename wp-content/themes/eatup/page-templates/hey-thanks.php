@@ -32,7 +32,7 @@ get_header() ?>
         <div class="food-sponsor-container">
           <?php $food_sponsors = get_field('food_sponsors'); ?>
           <?php foreach($food_sponsors as $food_sponsor): ?>
-            <img class="food-sponsor col-xs-4" src="<?php echo $food_sponsor['url']; ?>" alt="sponsor">
+            <img class="food-sponsor" src="<?php echo $food_sponsor['url']; ?>" alt="sponsor">
           <?php endforeach; ?>
         </div>   
         
@@ -40,13 +40,10 @@ get_header() ?>
         <div class="logistics-sponsor-container">
           <?php $logistics_sponsors = get_field('logistics_sponsors'); ?>
           <?php foreach($logistics_sponsors as $logistics_sponsor): ?>
-            <img class="logistics-sponsor col-xs-4" src="<?php echo $logistics_sponsor['url']; ?>" alt="sponsor">
+            <img class="logistics-sponsor" src="<?php echo $logistics_sponsor['url']; ?>" alt="sponsor">
           <?php endforeach; ?>
         </div> 
       </div>
-    </div>
-    <div class="btn-container">
-      <div class="btn btn-light-blue-invert">Find out how you can help</div>
     </div>
   </div>
   
@@ -63,8 +60,10 @@ get_header() ?>
         <img src="<?php eu_include('img/hey-thanks/Sandwiches-Row.jpg'); ?>">
       </div>
       
-      <h2 class="h2 grey you-made-it"><?php echo the_field('sangas_you_made_it'); ?></h2>
-      <div class="btn btn-pink-invert">Find out how you can help</div>
+      
+      
+      <h2 id="made-it" class="h2 grey you-made-it"><?php echo the_field('sangas_you_made_it'); ?></h2>
+      <a href="<?php eu_url('/give-us-a-hand'); ?>" class="btn btn-pink-invert">Find out how you can help</a>
       
     </div>
     <a href="#hey-thanks" class="b3 grey text-center back-to-top">Back to top</a>

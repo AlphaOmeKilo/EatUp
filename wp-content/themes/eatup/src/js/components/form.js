@@ -39,10 +39,20 @@ eu.form.init = function() {
     });
   }
   
+  function setCursorToEnd() {
+    this.focus();
+    var $thisVal = this.val();
+    this.val('').val($thisVal);
+    return this;
+  }
+  
   //ENTER OTHER DONATION AMOUNT
   $('#donation_amount_right').on('click', function() {
     $(this).next().removeClass('active');
-    $(this).next().next().addClass('active').focus();
+    $(this).next().next().text('$');
+    
+    value = $(this).next().next().val();        
+    $(this).next().next().addClass('active').focus().val('').val(value); 
   });
   
   $('.othervalue-text').focusout(function() {
@@ -69,9 +79,19 @@ eu.form.init = function() {
   
   //sandwiches calculations
   function calculateDonation() {
-    var selValue = $('input[name=donation_amount]:checked').val(); 
-    $('#donation-amount').text(selValue);
-    $('#donation-lunches').text(selValue);
+    selValue = $('input[name=donation_amount]:checked').val();
+    if(selValue) {
+      if(selValue == "$") {
+        $('#donation-amount').text("$0");
+        $('#donation-lunches').text("0");
+      } else if(selValue.substring(0,1) == "$") {
+        $('#donation-amount').text(selValue);
+        $('#donation-lunches').text(selValue.substring(1));
+      } else {
+        $('#donation-amount').text("$" + selValue);
+        $('#donation-lunches').text(selValue);
+      }
+    }
   }
   
   $('.switch-field-choices input').on('click', function() {
@@ -79,7 +99,6 @@ eu.form.init = function() {
   });
   
   if(isMobile()) {
-    console.log('removing');
     $('#donation_amount_left').remove();
     $('#donation_amount_left_label').remove();
     $('#donation_amount_center').remove();
@@ -89,4 +108,5 @@ eu.form.init = function() {
   
 
   initEmailFormListener();
+  calculateDonation();
 }

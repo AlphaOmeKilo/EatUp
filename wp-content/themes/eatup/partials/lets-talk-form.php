@@ -8,12 +8,14 @@
   <label for="#contact-message" class="b1 white message-label">Your Message</label>
   <textarea id="contact-message" class="b1 white" name="message" rows="8" cols="80" placeholder="" required></textarea>
   
-  <div class="col-xs-12 form-footer">
-    <div class="newsletter col-sm-8 col-xs-12">
-      <b2 class="b2 white newsletter-text">I agree to receiving a newsletter from Eat Up</b2>
-      <input id="checkBox" type="checkbox" value="1" name="checkbox" class="newsletter-checkbox">
+  <div class="form-footer">
+    <div class="newsletter">
+      <label for="checkBox" class="b2 white newsletter-text">I agree to receiving a newsletter from Eat Up</label>
+      <input id="checkBox" type="checkbox" name="checkbox" value="1" class="newsletter-checkbox">
     </div>
-    <input class="btn btn-light-green-invert col-sm-4 col-sm-push-0 col-xs-4 col-xs-push-4" type="submit" value="Submit">
+    <div class="btn-container">
+      <input class="btn btn-light-green-invert col-sm-3" type="submit" value="Submit">
+    </div>
   </div>
   
 </form>

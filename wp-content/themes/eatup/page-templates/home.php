@@ -27,6 +27,10 @@ get_header() ?>
       </video>
       
       <div class="close bg-deep-green"><div></div><div></div></div>
+      <div class="video-control bg-deep-green">
+        <div class="play"><div></div></div>
+        <div class="pause active"><div></div><div></div></div>
+      </div>
       <div class="progress-bar bg-deep-green">
         <div class="progress-value bg-white"></div>
         <div class="progress-backer bg-light-green"></div>
@@ -79,6 +83,7 @@ get_header() ?>
         <?php foreach($photos as $photo): ?>
         <div style="background-image: url('<?php echo $photo['url']; ?>')" class="interactive-photo"></div>
         <?php endforeach; ?>
+        <b3 class="b3 white click-cta">Click the polaroids to see more photos!</b3>
       </div>
     
     </div>
@@ -144,6 +149,7 @@ get_header() ?>
           <b2 class="b2 white copy"><?php echo $left['copy']; ?></b2>
           <div class="btn-container">
             <a href="https://www.facebook.com/eatupaus/" target="_blank" class="btn btn-purple-invert">Like us on facebook</a>
+            <a href="https://www.instagram.com/eatupaustralia/" target="_blank" class="btn btn-purple-invert">Follow us on Instagram</a>
           </div>
           
         </div>
@@ -168,6 +174,7 @@ get_header() ?>
     <img class="image image-yoghurt not-mobile" src="<?php eu_include('img/home/yoghurt.png'); ?>" alt="yoghurt">
   </div>
   
+<!--
   <div class="media-articles-content container">
     <h2 class="h2 black heading">What's New?</h2>
 
@@ -202,6 +209,7 @@ get_header() ?>
 
       <a href="<?php eu_url('/media'); ?>" class="see-more-home b3 black text-center not-mobile">See More</a>
   </div>
+-->
   
 </div>
 

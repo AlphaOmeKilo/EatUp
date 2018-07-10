@@ -43,10 +43,10 @@ get_header() ?>
     <b2 class="b2 white author"><?php echo get_the_author(); ?></b2>
     <b3 class="b3 white share">Share</b3>
     <div class="social-links">
-      <a class="social-link" href=""><img src="<?php eu_include('img/media/Share-Facebook.svg'); ?>"></a>
-      <a class="social-link" href=""><img src="<?php eu_include('img/media/Share-Twitter.svg'); ?>"></a>
-      <a class="social-link" href=""><img src="<?php eu_include('img/media/Share-Pinterest.svg'); ?>"></a>
-      <a class="social-link" href=""><img src="<?php eu_include('img/media/Share-Linkedin.svg'); ?>"></a>
+      <a class="social-link" href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>" target="_blank"><img src="<?php eu_include('img/media/Share-Facebook.svg'); ?>"></a>
+      <a class="social-link" href="https://twitter.com/home?status=<?php the_permalink(); ?>" target="_blank"><img src="<?php eu_include('img/media/Share-Twitter.svg'); ?>"></a>
+      <a class="social-link" href="https://pinterest.com/pin/create/button/?url=&media=<?php the_permalink(); ?>&description=" target="_blank"><img src="<?php eu_include('img/media/Share-Pinterest.svg'); ?>"></a>
+      <a class="social-link" href="https://www.linkedin.com/shareArticle?mini=true&url=<?php the_permalink(); ?>" target="_blank"><img src="<?php eu_include('img/media/Share-Linkedin.svg'); ?>"></a>
     </div>
   </div>
   

@@ -66,10 +66,11 @@
       }
     }
   }
-
+  
   .othervalue-text {
     display: none;
     width: fit-content;
+    text-align: left;
     
     &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
       color: $white;
@@ -193,6 +194,7 @@
       float: left;
       margin: 0 auto 24px;
       white-space: nowrap;
+      text-align: center;
       
       &:first-of-type {
         margin-left: 0;
@@ -207,7 +209,6 @@
     .othervalue-text {
       background-color: transparent;
       font-weight: normal;
-      text-align: center;
       text-shadow: none;
       margin-bottom: 24px;
       padding: 6px 14px;
@@ -223,6 +224,11 @@
   }
 
   .radio-group {
+    
+    @include desktop {
+      width: 50vw;
+    }
+    
     
     &-choices {
       margin-bottom: 52px;
@@ -245,6 +251,8 @@
     align-items: center;
     overflow-x: visible;
     float: left;
+    width: 100%;
+    flex-wrap: wrap;
     
     @include mobile {
       display: inline-grid;
@@ -321,6 +329,8 @@
   .form-footer {
     display: flex;
     align-items: center;
+    width: 100%;
+    flex-wrap: wrap;
     
     @include mobile {
       flex-wrap: wrap;
@@ -331,9 +341,24 @@
       }
     }
     
+    .btn-container {
+      display: flex;
+      justify-content: flex-end;
+      margin-left:auto; 
+      margin-right:0;
+      
+      @include mobile {
+        width: 100%;
+        margin: 0 auto;
+        justify-content: center;
+      }
+    }
+    
     .newsletter {
       display: flex;
       align-items: center;
+      margin-bottom: 12px;
+      margin-top: 12px;
       
       @include desktop {
         font-weight: bold;
@@ -341,28 +366,51 @@
       
       @include mobile {
         margin-bottom: 48px;
+        width: 90%;
       }
       
       &-text {
-        @include mobile {
-          max-width: 208px;
-        }
+        margin-right: 24px;
+        
       }
       
       input[type=checkbox] {
-        margin-left: 12px;
-        transform: scale(1.5);
+        -webkit-appearance: none;
+        background-color: $white;
+        border: 1px solid $black;
+        padding: 9px;
+        display: inline-block;
+        position: relative;
         
-        @include mobile {
-          transform: scale(2);
-          position: absolute;
-          right: 50px;
+        &:checked {
+          background-color: $white;
+          border: 1px solid $black;
+          color: $black;
+          
+          &:after {
+            content: '\2714';
+            font-size: 14px;
+            position: absolute;
+            top: 0px;
+            left: 3px;
+            color: $black;
+          }
         }
       }
+      
+//      input[type=checkbox] {
+//        margin-left: 12px;
+//        transform: scale(1.5);
+//        
+//        @include mobile {
+//          transform: scale(2);
+//          position: absolute;
+//          right: 50px;
+//        }
+//      }
     }
     
     .btn {
-      position: absolute;
       right: 0;
       
       @include mobile {
@@ -370,6 +418,7 @@
       }
       
       .signup-a-school & {
+        position: absolute;
         width: 124px;
         right: calc(50% - 62px);
         

@@ -10,6 +10,7 @@
     <?php endif ?>
 
   <script type="text/javascript">
+    var theme_url = '<?php echo eu_url('/wp-content/themes/eatup/') ?>';
     var ajax_url = '<?php echo admin_url( 'admin-ajax.php' ) ?>';
     var post_url = '<?php echo admin_url( 'admin-post.php' ) ?>';
   </script>

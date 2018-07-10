@@ -47,7 +47,7 @@
         <a href="<?php eu_url('/donate-form'); ?>" class="menu-link not-mobile"><li class="b1">Donate</li></a>
         <a href="<?php eu_url('/give-us-a-hand'); ?>" class="menu-link not-mobile"><li class="b1">Give us a hand</li></a>
         <a href="<?php eu_url('/hey-thanks'); ?>" class="menu-link not-mobile"><li class="b1">Hey, thanks!</li></a>
-        <a href="<?php eu_url('/media'); ?>" class="menu-link not-mobile"><li class="b1">Media</li></a>
+<!--        <a href="<?php eu_url('/media'); ?>" class="menu-link not-mobile"><li class="b1">Media</li></a>-->
         <a href="<?php eu_url('/signup-a-school'); ?>" class="menu-link not-mobile"><li class="b1">School signup</li></a>
         <a href="<?php eu_url('/lets-talk'); ?>" class="menu-link not-mobile"><li class="b1">Let's talk</li></a>
         <li class="b1 menu-link menu-link-mobile mobile-only mobile-menu active">Menu</li>
@@ -62,7 +62,7 @@
         <a href="<?php eu_url('/donate-form'); ?>" class="menu-link"><li class="b1">Donate</li></a>
         <a href="<?php eu_url('/give-us-a-hand'); ?>" class="menu-link"><li class="b1">Give us a hand</li></a>
         <a href="<?php eu_url('/hey-thanks'); ?>" class="menu-link"><li class="b1">Hey, thanks!</li></a>
-        <a href="<?php eu_url('/media'); ?>" class="menu-link"><li class="b1">Media</li></a>
+<!--        <a href="<?php eu_url('/media'); ?>" class="menu-link"><li class="b1">Media</li></a>-->
         <a href="<?php eu_url('/signup-a-school'); ?>" class="menu-link"><li class="b1">School signup</li></a>
         <a href="<?php eu_url('/lets-talk'); ?>" class="menu-link"><li class="b1">Let's talk</li></a>
       </div>

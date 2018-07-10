@@ -103,6 +103,59 @@ eu.home.init = function() {
     clearInterval($updateVideoProgress);
     $('#watch-vid-btn').click();
   });
+  
+  $('.pause').on('click tap', function() {
+    $('video').get(0).pause();
+    $('.play').addClass('active');
+    $(this).removeClass('active');
+  });
+  
+  $('.play').on('click tap', function() {
+    $('video').get(0).play();
+    $('.pause').addClass('active');
+    $(this).removeClass('active');
+  });
+  
+  $('video').on('click tap', function() {
+    $('.pause').toggleClass('active');
+    $('.play').toggleClass('active');
+    if($('video').get(0).paused) {
+      $('video').get(0).play();
+    } else {
+      $('video').get(0).pause();
+    }
+  });
+  
+  $('.friends-logo-container .logo:last-of-type').add('.sponsors-logos .sponsor:last-of-type').add('.food-sponsor-container .food-sponsor:last-of-type').on('mouseenter', function() {
+    $(this).hide();
+//    $(this).attr("src", theme_url + "img/home/hoverrecipe.png");
+//    $(this).attr("href", "http://www.tablelandsspreads.com.au/catalogue/");
+    $('.friends-logo-container').append('<a href="http://www.tablelandsspreads.com.au/catalogue/lunch-snack-ideas/" class="logo-link" target="_blank">  <img src="' + theme_url + 'img/home/hoverrecipe.png" class="logo"></a>');
+    
+    $('.sponsors-logos').append('<a href="http://www.tablelandsspreads.com.au/catalogue/lunch-snack-ideas/" class="sponsor-link" target="_blank">  <img src="' + theme_url + 'img/home/hoverrecipe.png" class="logo"></a>');
+    
+    $('.food-sponsor-container').append('<a href="http://www.tablelandsspreads.com.au/catalogue/lunch-snack-ideas/" class="logo-link" target="_blank">  <img src="' + theme_url + 'img/home/hoverrecipe.png" class="food-sponsor"></a>');
+    
+    setLogoLinkAction();
+  });
+  
+  
+  setLogoLinkAction = function() {
+    $('.friends-logo-container .logo-link').on('mouseleave', function() {
+      $(this).hide();
+      $('.friends-logo-container .logo:last-of-type').show();
+    });
+    
+    $('.sponsors-logos .sponsor-link').on('mouseleave', function() {
+      $(this).hide();
+      $('.sponsors-logos .sponsor:last-of-type').show();
+    });
+    
+    $('.food-sponsor-container .logo-link').on('mouseleave', function() {
+      $(this).hide();
+      $('.food-sponsor-container .food-sponsor:last-of-type').show();
+    });
+  }
 }
 
 jQuery.fn.reverse = [].reverse;

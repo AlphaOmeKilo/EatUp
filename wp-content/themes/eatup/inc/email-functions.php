@@ -83,7 +83,7 @@ function signup_a_school() {
   $postcode = $_POST["postcode"];
   $message = $_POST["message"];
   
-  $email_to = "hello@loveandmoney.agency";
+  $email_to = "eatup@eatup.org.au";
   $email_subject = "School Signup";
   
   $email_message = "Contact Details:\n\n";
@@ -137,7 +137,16 @@ function help_us_out() {
     add_to_mailing_list($email);
   }
   
-  $email_to = "hello@loveandmoney.agency";
+  if ($help_type == "single volunteer") {
+    $email_to = "eatup@eatup.org.au"; 
+  } else if($help_type == "corporate group") {
+    $email_to = "lindy@eatup.org.au";
+  } else if ($help_type == "school") {
+    $email_to = "elise@eatup.org.au";
+  } else {
+    $email_to = "eatup@eatup.org.au"; 
+  }
+  
   $email_subject = "Help us out - Enquiry";
   
   $email_message = "";
@@ -181,7 +190,7 @@ function lets_talk_contact() {
     add_to_mailing_list($email);
   }
   
-  $email_to = "hello@loveandmoney.agency";
+  $email_to = "eatup@eatup.org.au";
   $email_subject = "Let's Talk - Enquiry";
   
   $email_message = "";

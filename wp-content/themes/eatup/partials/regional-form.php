@@ -2,22 +2,22 @@
   <input name="action" type="hidden" value="help_us_out" id="form-action">
   
   <div class="radio-group">
-    <div class="col-sm-3 col-xs-4 col-xs-push-1">
+    <div class="col-sm-3 col-xs-4 col-xs-push-1 col-sm-push-2 col-md-push-0">
       <b1 class="b1 white you-are">I will be a :</b1>
     </div>
-    <div class="col-sm-9 col-xs-7 col-xs-push-1 radio-group-choices">
+    <div class="col-sm-9 col-xs-7 col-xs-push-1 col-sm-push-2 col-md-push-0 radio-group-choices">
       <div class="radio-container">
-        <input type="radio" class="radio" name="help-type" value="single volunteer" id="opt-a">
-        <label for="opt-a" class="b1 white radio-text">Single volunteer</label>
-        <input type="radio" class="radio" name="help-type" value="community group" id="opt-b">
-        <label for="opt-b" class="b1 white radio-text">Community group</label>
+        <input type="radio" class="radio" name="help-type" value="sandwich maker" id="opt-a">
+        <label for="opt-a" class="b1 white radio-text">Sandwich maker</label>
+        <input type="radio" class="radio" name="help-type" value="delivery driver" id="opt-b">
+        <label for="opt-b" class="b1 white radio-text">Delivery driver</label>
       </div>
 
       <div class="radio-container">
-        <input type="radio" class="radio" name="help-type" value="corporate group" id="opt-c">
-        <label for="opt-c" class="b1 white radio-text">Corporate Group</label>
-        <input type="radio" class="radio" name="help-type" value="school" id="opt-d">
-        <label for="opt-d" class="b1 white radio-text">School</label>
+        <input type="radio" class="radio" name="help-type" value="local leader" id="opt-c">
+        <label for="opt-c" class="b1 white radio-text">Local leader</label>
+        <input type="radio" class="radio" name="help-type" value="all" id="opt-d">
+        <label for="opt-d" class="b1 white radio-text">All of them</label>
       </div>
 
     </div>
@@ -31,12 +31,14 @@
   <label for="#contact-message" class="b1 white message-label">Your Message</label>
   <textarea id="contact-message" class="b1 white" name="message" rows="8" cols="80" placeholder="" required></textarea>
   
-  <div class="col-sm-12 form-footer">
-    <div class="newsletter col-sm-8 col-xs-12">
-      <b2 class="b2 white newsletter-text">I agree to receiving a newsletter from Eat Up</b2>
+  <div class="form-footer">
+    <div class="newsletter">
+      <label for="checkBox" class="b2 white newsletter-text">I agree to receiving a newsletter from Eat Up</label>
       <input id="checkBox" type="checkbox" name="checkbox" value="1" class="newsletter-checkbox">
     </div>
-    <input class="btn btn-purple-invert col-sm-4" type="submit" value="Submit">
+    <div class="btn-container">
+      <input class="btn btn-purple-invert col-sm-3" type="submit" value="Submit">
+    </div>
   </div>
   
 </form>

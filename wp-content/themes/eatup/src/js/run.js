@@ -55,6 +55,8 @@ var eu = eu || {};
     eu.form.init();
     eu.media.init();
     eu.thanks.init();
+    eu.hand.init();
+    enableSmoothScroll();
   }
 
   jQuery(function($) {

@@ -66,7 +66,7 @@
     width: 100%;
     
     &-content {
-      padding: 192px 162px 240px;
+      padding: 192px 162px 192px;
       
       @include tablet {
         padding: 64px 0 0;
@@ -91,7 +91,7 @@
       
       .food-sponsor,
       .logistics-sponsor {
-        padding-top: 12px;
+        width: 90px;
         
         @include tablet {
           height: 100%;
@@ -101,8 +101,10 @@
         &-container {
           display: flex;
           justify-content: center;
+          align-items: center;
           height: 64px;
           margin-bottom: 32px;
+          margin-top: 6px;
           
           @include tablet {
             display: block;
@@ -141,6 +143,16 @@
       .subtitle {
         width: 432px;
         margin-bottom: 96px;
+      }
+      
+      .skip {
+        position: fixed;
+        right: 0;
+        top: 25%;
+        
+        &.active {
+          display: block;
+        }
       }
       
       .sanga-container {

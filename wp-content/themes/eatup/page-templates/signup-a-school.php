@@ -20,6 +20,8 @@ get_header() ?>
          <?php include(locate_template('partials/signup-a-school-form.php')); ?>
       </div>
     </div>
+    
+    <img class="apple desktop-only" src="<?php eu_include('img/school/apple.png'); ?>" alt="apple">
   
   </div>
 </div>

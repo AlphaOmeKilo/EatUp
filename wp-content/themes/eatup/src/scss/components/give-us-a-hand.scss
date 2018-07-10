@@ -1,5 +1,75 @@
 .give-us-a-hand {
   
+  &-helpers {
+    width: 100%;
+    
+    &-content {
+      padding: 96px 162px 87px;
+      
+      @include tablet {
+        padding: 64px 34px 68px;
+      }
+      
+      @include mobile {
+        padding: 32px 20px 0;
+      }
+      
+      .metro {
+        @include desktop {
+          padding-left: 38px;
+        }
+        
+      }
+      
+      .regional {
+        
+      }
+      
+      .metro, 
+      .regional {
+        
+        @include mobile {
+          text-align: center;
+        }
+        
+        .title {
+          margin-bottom: 24px;
+          
+          @include tablet {
+            margin-bottom: 28px;
+          }
+        }
+        
+        .subtitle {
+          width: 432px;
+          
+          @include tablet {
+            width: 283px;
+          }
+          
+          @include mobile {
+            width: auto;
+            max-width: 320px;
+            margin: 0 auto;
+          }
+        }
+        
+        .btn {
+          margin-top: 16px;
+          display: block;
+          
+          @include tablet {
+            margin-top: 12px;
+          }
+          
+          @include mobile {
+            margin: 16px auto 40px;
+          }
+        }
+      }
+    }
+  }
+  
   &-intro {
     width: 100%;
     
@@ -77,7 +147,7 @@
       padding: 128px 48px 96px;
       
       @include tablet {
-        padding: 64px 94px 76px;
+        padding: 64px 60px 76px;
       }
       
       @include mobile {
@@ -90,14 +160,14 @@
         @include tablet {
           padding-left: 0;
           width: 580px;
-          margin: 0 auto;
+          margin: 0 auto 48px;
           text-align: center;
         }
         
         @include mobile {
           padding-left: 0;
           max-width: 320px;
-          margin: 0 auto;
+          margin: 0 auto 32px;
           text-align: center;
         }
       }
@@ -105,7 +175,30 @@
       .video {
         
         &-container {
-          padding: 64px 76px;
+          padding: 0 76px 64px 76px;
+          
+          @include tablet {
+            padding: 0 153px 0;
+          }
+          
+          .video {
+            width: 100%;
+          }
+          
+          .play {
+            border-bottom: 25px solid transparent;
+            border-top: 25px solid transparent;
+            border-left: 40px solid $white;
+            border-right: 25px solid transparent;
+            position: absolute;
+            top: calc(50% - 54px);
+            left: calc(50% - 20px);
+            display: none;
+            
+            &.active {
+              display: block;
+            }
+          }
         }
       }
     }
@@ -152,10 +245,10 @@
     }
     
     .sponsors {
-      padding: 192px 114px 192px 24px;
+      padding: 192px 0 192px 24px;
       
       @include tablet {
-        padding: 0 94px 76px;
+        padding: 0 0 76px;
       }
       
       @include mobile {
@@ -177,26 +270,57 @@
       }
       
       &-logos {
+        flex-wrap: wrap;
+        display: flex;
+        width: 432px;
+        margin-left: calc(50% - 216px);
+        align-items: center;
+        
+        @include tablet {
+          width: 699px;
+          margin-left: 50%;
+          transform: translateX(-50%);
+        }
+        
         @include mobile {
           margin-bottom: 48px;
+          width: 244px;
+          margin-left: 50%;
+          transform: translateX(-50%);
         }
         
         
-        .sponsor {
-          height: 64px;
+        .sponsor,
+        .sponsor-link .logo {
+          width: 90px;
           margin-bottom: 12px;
           
+          @include tablet {
+            width: 104px;
+          }
+          
           @include mobile {
-            padding-left: 38px;
-            padding-right: 38px;
-            margin-top: 32px;
+            width: 76px;
+            margin-top: 32px; 
             margin-bottom: 32px;
           }
         }
+        .sponsor:not(:nth-of-type(even)) {
+          @include mobile {
+            margin-right: 92px;
+          }
+        }
         
-        .sponsor:not(:nth-of-type(4)),
-        .sponsor:not(:nth-of-type(8)) {
-          padding-right: 24px;
+        .sponsor:not(:nth-of-type(6)):not(:nth-of-type(12)) {
+          @include tablet {
+            margin-right: 15px;
+          }
+        }
+        
+        .sponsor:not(:nth-of-type(4)):not(:nth-of-type(8)) {
+          @include desktop {
+            margin-right: 24px;
+          }
         }
       }
     }
