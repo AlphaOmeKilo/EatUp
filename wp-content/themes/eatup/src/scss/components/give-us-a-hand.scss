@@ -146,12 +146,16 @@
     &-content {
       padding: 128px 48px 96px;
       
+      @include desktop {
+        display: flex;
+      }
+      
       @include tablet {
-        padding: 64px 60px 76px;
+        padding: 64px 60px 59px;
       }
       
       @include mobile {
-        padding: 32px 20px 90px;
+        padding: 32px 20px 32px;
       }
       
       .title {
@@ -175,29 +179,18 @@
       .video {
         
         &-container {
-          padding: 0 76px 64px 76px;
+          height: 254px;
           
           @include tablet {
             padding: 0 153px 0;
           }
           
-          .video {
-            width: 100%;
+          @include mobile {
+            height: 50vw;
           }
           
-          .play {
-            border-bottom: 25px solid transparent;
-            border-top: 25px solid transparent;
-            border-left: 40px solid $white;
-            border-right: 25px solid transparent;
-            position: absolute;
-            top: calc(50% - 54px);
-            left: calc(50% - 20px);
-            display: none;
-            
-            &.active {
-              display: block;
-            }
+          .video {
+            width: 100%;
           }
         }
       }

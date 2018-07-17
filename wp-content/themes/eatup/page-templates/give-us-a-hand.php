@@ -35,33 +35,18 @@ get_header() ?>
     </div>
   </div>
   
-<!--
   <div id="founder" class="give-us-a-hand-founder bg-purple">
     <div class="give-us-a-hand-founder-content container">
       <div class="col-md-6 col-xs-12">
         <h2 class="h2 grey title"><?php echo the_field('founder_title'); ?></h2>
       </div>
-      <div class="col-md-6 col-xs-12">
+      <div class="col-md-5 col-md-push-1 col-xs-12">
         <div class="video-container">
-          <video class="video" loop webkit-playsinline="true" playsinline="true">
-            <source src="https://player.vimeo.com/external/238482593.hd.mp4?s=d883a100eb9ef48cbd7dea8623b647332c250e50&profile_id=174" type="video/mp4">
-          </video>
-          <video preload="auto" poster="" id="video-container_html5_api" class="vjs-tech video" tabindex="-1" src="https://cdn-1.metacdn.net/wajzusep/JlboPLln/55248_44771_mp4-MEDIUM-MP4.mp4">
-      <source src="https://cdn-1.metacdn.net/wajzusep/JlTVrWzt/55248_44771_mp4-MOBILE-MP4.mp4" type="video/mp4" data-res="MOBILE" label="240p">
-      <source src="https://cdn-1.metacdn.net/wajzusep/JloH75Sv/55248_44771_mp4-MOBILE-WEBM.webm" type="video/webm" data-res="MOBILE" label="240p">        
-      <source src="https://cdn-1.metacdn.net/wajzusep/JlboPLln/55248_44771_mp4-MEDIUM-MP4.mp4" type="video/mp4" data-res="MEDIUM" label="480p">
-      <source src="https://cdn-1.metacdn.net/wajzusep/JlddqDe8/55248_44771_mp4-MEDIUM-WEBM.webm" type="video/webm" data-res="MEDIUM" label="480p">        
-      <source src="https://cdn-1.metacdn.net/wajzusep/JlVctioj/55248_44771_mp4-HIGH-WEBM.webm" type="video/webm" data-res="HIGH" label="720p">        
-      <source src="https://cdn-1.metacdn.net/wajzusep/JjQsQWwl/55248_44771_mp4-HIGH-MP4.mp4" type="video/mp4" data-res="HIGH" label="720p">
-      <source src="https://cdn-1.metacdn.net/wajzusep/JlcGAKIH/55248_44771_mp4-XHIGH-MP4.mp4" type="video/mp4" data-res="XHIGH" label="1080p">
-      <source src="https://cdn-1.metacdn.net/wajzusep/JljeHqEX/55248_44771_mp4-XHIGH-WEBM.webm" type="video/webm" data-res="XHIGH" label="1080p">       
-      </video>
-          <div class="play active"></div>
+          <iframe src="https://player.vimeo.com/video/280059054" style="position:absolute;top:0;left:0;width:100%;height:100%"; frameborder=“0” webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div><script src=“https://player.vimeo.com/api/player.js”></script>
         </div>
       </div>
     </div>
   </div>
--->
   
   <div class="give-us-a-hand-serving bg-purple">
     <div class="give-us-a-hand-serving-content container">
