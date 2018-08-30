@@ -50,7 +50,7 @@
     <b4 class="b4 white section-label">Payment Method</b4>
   
     <input id="card-number" class="contact-form-field b1 white col-sm-12 col-xs-12" type="text" name="card_number" value="" placeholder="Card number" required>
-    <input id="expiry-date" class="contact-form-field b1 white col-sm-5 col-xs-12"  type="text" name="expiry_date" value="" placeholder="Expiry date (MM/YY)" required>
+    <input id="expiry-date" class="contact-form-field b1 white col-sm-5 col-xs-12"  type="text" name="expiry_date" value="" placeholder="Expiry (MM/YY)" required>
     <input id="cvv" class="contact-form-field b1 white col-sm-5 col-sm-push-2 col-xs-12" name="cvv" value="" placeholder="CVV" required>
   </div>
   

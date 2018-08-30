@@ -54,6 +54,9 @@ function donate() {
   $monthly = $_POST['monthly'];
 
   $expiry = explode("/", $expiry_date);
+  if(sizeof($expiry) != 2) {
+    die(json_encode(array('error' => 'The CVV value was incorrect. Should be MM/YY (eg. 04/19)')));
+  }
   $expiry_month = (int)$expiry[0];
   $expiry_year = "20" . $expiry[1];
   
